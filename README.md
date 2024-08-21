@@ -9,7 +9,7 @@ git config --global user.email fulanodetal@exemplo.br*
 
 ### Clonar repositório
 Criar pasta para projeto e entrar nela
-*git clone https://github.com/edugradischnig/hackaton_ifrs_feliz_2024.git .*
+*git clone https://github.com/cauaauler/Discoteca-Prog-2024.git .*
 
 ### Criar uma nova branch (alterando para ela)
 *git checkout -b "nome_da_branch"*
