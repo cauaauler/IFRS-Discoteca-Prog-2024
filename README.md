@@ -1,4 +1,4 @@
-#GIT - COMANDOS ÚTEIS
+##GIT - COMANDOS ÚTEIS
 Configurar nome e email
 git config --global user.name "Fulano de Tal" git config --global user.email fulanodetal@exemplo.br
 
