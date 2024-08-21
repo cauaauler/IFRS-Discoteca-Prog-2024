@@ -1,36 +1,37 @@
-<h1>GIT - COMANDOS ÚTEIS</h1>
-Configurar nome e email
-git config --global user.name "Fulano de Tal" git config --global user.email fulanodetal@exemplo.br
 
-Clonar repositório
-Criar pasta para projeto e entrar nela git clone https://github.com/edugradischnig/hackaton_ifrs_feliz_2024.git .
+# Discoteca
 
-Criar uma nova branch (alterando para ela)
-git checkout -b "nome_da_branch"
+## GIT - COMANDOS ÚTEIS
 
-Alterar para alguma branch
-git switch nome_da_branch
+### Configurar nome e email
+*git config --global user.name "Fulano de Tal"
+git config --global user.email fulanodetal@exemplo.br*
 
-Deletar uma branch local
-git branch -d nome_da_branch
+### Clonar repositório
+Criar pasta para projeto e entrar nela
+*git clone https://github.com/edugradischnig/hackaton_ifrs_feliz_2024.git .*
 
-Adicionar arquivos para área de stage
-git add nome_do_arquivo
+### Criar uma nova branch (alterando para ela)
+*git checkout -b "nome_da_branch"*
 
-Comitar
-git commit -m "mensagem do commit"
+### Alterar para alguma branch
+*git switch nome_da_branch*
 
-Enviar alterações da branch atual para servidor remoto (Github)
-git push
+### Deletar uma branch local
+*git branch -d nome_da_branch*
 
-Baixar alterações da branch atual do servidor remoto (Github)
-git pull
-
-Unir alterações de outra branch na branch atual
--> precisa estar dentro da branch atual git merge nome_outra_branch
-
-Ver últimos commits da branch
+### Adicionar arquivos para área de stage
+*git add nome_do_arquivo*
+### Comitar
+*git commit -m "mensagem do commit"*
+### Enviar alterações da branch atual para servidor remoto (Github)
+*git push*
+### Baixar alterações da branch atual do servidor remoto (Github)
+*git pull*
+### Unir alterações de outra branch na branch atual
+-> precisa estar dentro da branch atual
+*git merge nome_outra_branch*
+### Ver últimos commits da branch
 git logs
-
-Remover N commits na branch local
-git reset HEAD~~~N~~
+### Remover ~~N~~ commits na branch local
+*git reset HEAD~~~N~~*
