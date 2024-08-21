@@ -7,7 +7,6 @@
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -21,6 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `discoteca`
 --
+
+CREATE DATABASE IF NOT EXISTS `discoteca` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `discoteca`;
 
 -- --------------------------------------------------------
 
