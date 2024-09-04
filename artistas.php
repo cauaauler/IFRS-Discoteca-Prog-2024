@@ -3,7 +3,7 @@
     $query=  "select * from artista";
     $resultado = $db->query($query);
 
-    echo "<table>";
+    echo "<table border border-Style:dashed>";
     echo "<tr> 
             <td>Nome</td>
             <td>ID</td>
