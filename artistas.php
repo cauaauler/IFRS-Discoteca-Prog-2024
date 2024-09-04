@@ -17,6 +17,7 @@
             echo "<tr>";
             echo "<td> {$linha['Nome']}</td>";
             echo "<td> <a href='delArtista.php?IdArtista={$linha['IdArtista']}'>Eliminar</a> </td>";
+            echo "<td><a href='form_editArtista.php?idArtista={$linha['IdArtista']}'>Editar</a></td>";
             echo "</tr>";
         }
     }
