@@ -8,6 +8,7 @@
             <td>Nome</td>
             <td>ID</td>
             <td>fazer</td>
+            <td>fazer</td>
         </tr>";
     
     if($resultado ->num_rows==0){
@@ -15,9 +16,10 @@
     }else{
         foreach($resultado as $linha){
             echo "<tr>";
-            echo "<td> {$linha['Nome']}</td>";
-            echo "<td> {$linha['IdArtista']}</td>";
-           // echo "<td> <a href='delArtista.php?idArtista={$linha['IdArtista']}>Eliminar</a>";
+            echo "<td>{$linha['Nome']}</td>";
+            echo "<td>{$linha['IdArtista']}</td>";
+            echo "<td><a href='delArtista.php?idArtista={$linha['IdArtista']}'>Eliminar</a></td>";
+            echo "<td><a href='form_editArtista.php?idArtista={$linha['IdArtista']}'>Editar</a></td>";
             echo "</tr>";
         }
     }

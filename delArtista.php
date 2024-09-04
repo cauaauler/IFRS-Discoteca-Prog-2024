@@ -5,7 +5,4 @@
         $resultado = $db -> query($querry);
         header("location:artistas.php");
     }
-
-
-
 ?>
