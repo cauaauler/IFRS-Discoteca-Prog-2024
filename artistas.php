@@ -7,6 +7,7 @@
     echo "<tr> 
             <td>Nome</td>
             <td>fazer</td>
+            <td>fazer</td>
         </tr>";
     
     if($resultado ->num_rows==0){

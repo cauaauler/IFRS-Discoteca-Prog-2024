@@ -10,7 +10,4 @@
     else{
         echo"tu fez caca  ravi";
     }
-
-
-
 ?>
