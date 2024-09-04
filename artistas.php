@@ -17,7 +17,7 @@
             echo "<tr>";
             echo "<td> {$linha['Nome']}</td>";
             echo "<td> {$linha['IdArtista']}</td>";
-            //echo "<td> <a href='delArtista.php?idArtista={$linha['IdArtista']}>Eliminar</a>";
+           // echo "<td> <a href='delArtista.php?idArtista={$linha['IdArtista']}>Eliminar</a>";
             echo "</tr>";
         }
     }
