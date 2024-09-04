@@ -1,9 +1,14 @@
 <?php
     if(isset($_GET)){
-        $db = new mysqli("localhost", "discoteca", "", "root");
-        $querry = "Delete from artista where IdArtista={$_GET['Idartista']}";
-        $resultado = $db -> query($querry);
-        header("location:artistas.php");
+        $db = new mysqli("localhost", "root", "", "discoteca");
+        $idArtista = intval($_GET['IdArtista']);
+        $query = "delete FROM artista where IdArtista={$idArtista}";
+        $resultado = $db -> query($query);
+        header("location:artistas.php"); 
+
+    }
+    else{
+        echo"tu fez caca  ravi";
     }
 
 
