@@ -10,7 +10,7 @@
         <label  for="Nome" >Nome:</label>
         <input type="text" id="Nome" name='Nome' required>
         <br>
-        <input type="submit" value="adicinar" name="botao">
+        <input type="submit" value="adicionar" name="botao">
     </form>
 </body>
 </html>
