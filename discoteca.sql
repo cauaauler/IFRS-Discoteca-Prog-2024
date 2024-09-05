@@ -50,10 +50,10 @@ CREATE TABLE `devolucao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `discos`
+-- Estrutura para tabela `disco`
 --
 
-CREATE TABLE `discos` (
+CREATE TABLE `disco` (
   `Titulo` varchar(300) NOT NULL,
   `IdArtista` int(11) NOT NULL,
   `Ano` year(4) NOT NULL,
@@ -93,9 +93,9 @@ ALTER TABLE `devolucao`
   ADD KEY `IdEmp` (`IdEmp`);
 
 --
--- Índices de tabela `discos`
+-- Índices de tabela `disco`
 --
-ALTER TABLE `discos`
+ALTER TABLE `disco`
   ADD PRIMARY KEY (`IdDisco`),
   ADD KEY `IdArtista` (`IdArtista`);
 
@@ -123,9 +123,9 @@ ALTER TABLE `devolucao`
   MODIFY `IdDev` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `discos`
+-- AUTO_INCREMENT de tabela `disco`
 --
-ALTER TABLE `discos`
+ALTER TABLE `disco`
   MODIFY `IdDisco` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -145,16 +145,16 @@ ALTER TABLE `devolucao`
   ADD CONSTRAINT `devolucao_ibfk_1` FOREIGN KEY (`IdEmp`) REFERENCES `emprestimo` (`IdEmp`);
 
 --
--- Restrições para tabelas `discos`
+-- Restrições para tabelas `disco`
 --
-ALTER TABLE `discos`
-  ADD CONSTRAINT `discos_ibfk_1` FOREIGN KEY (`IdArtista`) REFERENCES `artista` (`IdArtista`);
+ALTER TABLE `disco`
+  ADD CONSTRAINT `disco_ibfk_1` FOREIGN KEY (`IdArtista`) REFERENCES `artista` (`IdArtista`);
 
 --
 -- Restrições para tabelas `emprestimo`
 --
 ALTER TABLE `emprestimo`
-  ADD CONSTRAINT `emprestimo_ibfk_1` FOREIGN KEY (`IdDisco`) REFERENCES `discos` (`IdDisco`);
+  ADD CONSTRAINT `emprestimo_ibfk_1` FOREIGN KEY (`IdDisco`) REFERENCES `disco` (`IdDisco`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

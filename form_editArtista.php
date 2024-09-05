@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="editArtista.php" method="post">
-        <label  for="Nome" >Nome:</label>
+        <label for="Nome">Nome:</label>
         <?php
         $db = new mysqli("localhost","root","", "discoteca");
         $idArtista = $_GET['idArtista'];
@@ -15,7 +15,7 @@
         $resultado = $db->query($query);
         $artista = $resultado->fetch_assoc();
         echo "<input type='text' id='Nome' name='Nome' required value={$artista['Nome']}>";
-        echo "<input type='text' id='idArtista' name='idArtista' required value={$idArtista} hidden>";
+        echo "<input type='text' id='IdArtista' name='IdArtista' required value={$idArtista} hidden>";
         ?>
         <br>
         

@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>adicinar disco</title>
+    <title>Adicionar Disco</title>
 </head>
+
 <body>
-    <form action="addDiscos.php" method="post">
-        <label for="Titulo">Título:</label> <input type="text" id="Titulo" name='Titulo' required>
-        <br>
-        <label for="Ano">Ano:</label> <input type="text" id="Ano" name='Ano' required>
-        <br>
-        <label for="Artista">Artista:</label> <input type="text" id="Artista" name='Artista' required>
-        <br>
-        
-        <form action="processa.php" method="post" id="container" enctype="multipart/form-data">
+    <form action="addDiscos.php" method="post" enctype="multipart/form-data">
+        <label for="Titulo">Título:</label>
+        <input type="text" id="Titulo" name="Titulo" required>
+
+        <label for="Ano">Ano:</label>
+        <input type="number" id="Ano" name="Ano" required>
+
+        <label for="Artista">Artista:</label>
+        <select name="Artista" id="Artista" required>
+            <?php
+            $db = new mysqli("localhost", "root", "", "discoteca");
+            if ($db->connect_error) {
+                die("Conexão falhou: " . $db->connect_error);
+            }
+
+            $query = "SELECT Nome, idArtista FROM artista";
+            $nomes = $db->query($query);
+
+            if ($nomes->num_rows > 0) {
+                while ($artista = $nomes->fetch_assoc()) {
+                    echo "<option value='{$artista['idArtista']}'>{$artista['Nome']}</option>";
+                }
+            } else {
+                echo "<option value=\"\">Nenhum artista encontrado</option>";
+            }
+
+            $db->close();
+            ?>
+        </select>
+
         <label for="v1">Selecione o arquivo:</label>
-        <input type="file" name="arquivo" id="v1" required  accept="image/*">
-        <button type="submit" name="botao"> Upload</button>
-    </form>
-        <input type="submit" value="adicinar" name="botao">
+        <input type="file" name="arquivo" id="v1" accept="image/*">
+
+        <input type="submit" value="Adicionar" name="botao">
     </form>
 </body>
+
 </html>
