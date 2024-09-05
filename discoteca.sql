@@ -56,7 +56,7 @@ CREATE TABLE `devolucao` (
 CREATE TABLE `disco` (
   `Titulo` varchar(300) NOT NULL,
   `IdArtista` int(11) NOT NULL,
-  `Ano` year(4) NOT NULL,
+  `Ano` int(4) NOT NULL,
   `FotoCapa` varchar(300) NOT NULL,
   `IdDisco` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

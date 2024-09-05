@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="addDiscos.php" method="post" enctype="multipart/form-data">
+    <form action="addDisco.php" method="post" enctype="multipart/form-data">
         <label for="Titulo">Título:</label>
         <input type="text" id="Titulo" name="Titulo" required>
 
