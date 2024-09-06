@@ -37,6 +37,7 @@
             $db->close();
             ?>
         </select>
+        <!-- FALTA O ARQUIVO -->
 
         <label for="v1">Selecione o arquivo:</label>
         <input type="file" name="arquivo" id="v1" accept="image/*">
