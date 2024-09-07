@@ -7,13 +7,17 @@ if (isset($_FILES["arquivo"])) {
         echo "Adicione um ano válido para o disco";
         echo "</br>";
         echo "<a href='discos.php'>Voltar</a>";
+    } else if (strlen($_POST['Titulo']) > 50) {
+        echo "O título precisa ter menos de 50 caracteres";
+        echo "</br>";
+        echo "<a href='discos.php'>Voltar</a>";
     } else {
 
         $imageFileType = strtolower(pathinfo($_FILES["arquivo"]["name"], PATHINFO_EXTENSION));
         $extensoesPermitidas = ["jpg", "jpeg", "png", "gif", "bmp", "webp"];
         // $check = getimagesize($_FILES["arquivo"]["tmp_name"]);
 
-        
+
         if ($_FILES["arquivo"]["error"] === UPLOAD_ERR_NO_FILE || !in_array(
             $imageFileType,
             $extensoesPermitidas
@@ -28,7 +32,7 @@ if (isset($_FILES["arquivo"])) {
         } else if ($_FILES["arquivo"]["error"] === 0) {
 
             //Se algum arquivo for enviado
-        
+
             $idDisco = $db->insert_id;
             $target_dir = "uploads/";
             $novoNomeArquivo = $idDisco . "_" . preg_replace("/[^a-zA-Z0-9]/", "_", $_POST['Titulo']) . "." . $imageFileType;

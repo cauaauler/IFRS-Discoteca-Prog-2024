@@ -6,6 +6,10 @@ if ($_POST['Ano'] > $anoAtual || $_POST['Ano'] < 1850) {
     echo "Adicione um ano válido para o disco";
     echo "</br>";
     echo "<a href='discos.php'>Voltar</a>";
+} else if (strlen($_POST['Titulo']) > 50) {
+    echo "O título precisa ter menos de 50 caracteres";
+    echo "</br>";
+    echo "<a href='discos.php'>Voltar</a>";
 } else {
 
 
