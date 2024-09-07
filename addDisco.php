@@ -7,20 +7,27 @@ if ($_POST['Ano'] > $anoAtual || $_POST['Ano'] < 1850) {
     echo "</br>";
     echo "<a href='discos.php'>Voltar</a>";
 } else {
-    // Realiza a inserção no banco de dados (sem a imagem por enquanto)
     $query = "INSERT INTO disco (Titulo, Ano, idArtista) VALUES ('$_POST[Titulo]', $_POST[Ano], '$_POST[Artista]')";
     $resultado = $db->query($query);
 
-    // Obtém o ID gerado automaticamente pelo banco para a inserção
+    //Para mudar o nome do arquivo baseado no id do disco
     $idDisco = $db->insert_id;
-
-    // Diretório de upload
     $target_dir = "uploads/";
 
-    // Verifica se um arquivo foi enviado sem erros
     if ($_FILES['arquivo']['error'] == 0) {
-        // Pega a extensão do arquivo
+
         $imageFileType = strtolower(pathinfo($_FILES["arquivo"]["name"], PATHINFO_EXTENSION));
+        $extensoesPermitidas = ["jpg", "jpeg", "png", "gif", "bmp", "webp"];
+        $check = getimagesize($_FILES["arquivo"]["tmp_name"]);
+
+        //checar se o arquivo é uma imagem válida
+        if ($check == false && !in_array($imageFileType,
+            $extensoesPermitidas
+        )) {
+            echo "O arquivo não é uma imagem ou a extensão é inválida.";
+            echo "<a href='index.php'>Voltar</a>";
+            exit();
+        } 
 
         // Define o novo nome para o arquivo, baseado no ID do disco e no título
         $novoNomeArquivo = $idDisco . "_" . preg_replace("/[^a-zA-Z0-9]/", "_", $_POST['Titulo']) . "." . $imageFileType;
@@ -28,22 +35,22 @@ if ($_POST['Ano'] > $anoAtual || $_POST['Ano'] < 1850) {
         // Caminho completo do arquivo
         $target_file = $target_dir . $novoNomeArquivo;
 
-        // Move o arquivo para o diretório desejado
         if (move_uploaded_file($_FILES["arquivo"]["tmp_name"], $target_file)) {
             echo "O arquivo " . htmlspecialchars($novoNomeArquivo) . " foi enviado com sucesso.";
 
-            // Atualiza o registro no banco de dados com o caminho da imagem
             $queryUpdate = "UPDATE disco SET FotoCapa='$target_file' WHERE idDisco=$idDisco";
             $resultadoUpdate = $db->query($queryUpdate);
 
             header('Location: discos.php');
-            exit(); // Sempre use exit após redirecionamento para evitar execução adicional do script
+            exit(); 
         } else {
             echo "Desculpe, houve um erro ao enviar o arquivo.";
+            echo "<a href='index.php'>Voltar</a>";
+            exit();
         }
-
-        echo "Caminho do arquivo salvo: {$target_file}";
     } else {
         echo "Nenhum arquivo foi enviado ou houve um erro no envio.";
+        echo "<a href='index.php'>Voltar</a>";
+        exit();
     }
 }
