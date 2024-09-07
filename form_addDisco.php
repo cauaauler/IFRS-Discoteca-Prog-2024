@@ -37,12 +37,10 @@
             $db->close();
             ?>
         </select>
-        <!-- FALTA O ARQUIVO -->
 
         <label for="v1">Selecione o arquivo:</label>
         <input type="file" name="arquivo" id="v1" accept="image/*">
-
-        <input type="submit" value="Adicionar" name="botao">
+        <input type="submit" value="Adicionar" name="Adicionar">
     </form>
 </body>
 
