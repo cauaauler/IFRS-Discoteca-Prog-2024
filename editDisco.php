@@ -11,10 +11,10 @@ if (isset($_FILES["arquivo"])) {
 
         $imageFileType = strtolower(pathinfo($_FILES["arquivo"]["name"], PATHINFO_EXTENSION));
         $extensoesPermitidas = ["jpg", "jpeg", "png", "gif", "bmp", "webp"];
-        $check = getimagesize($_FILES["arquivo"]["tmp_name"]);
+        // $check = getimagesize($_FILES["arquivo"]["tmp_name"]);
 
         
-        if ($_FILES["arquivo"]["error"] === UPLOAD_ERR_NO_FILE || $check == false && !in_array(
+        if ($_FILES["arquivo"]["error"] === UPLOAD_ERR_NO_FILE || !in_array(
             $imageFileType,
             $extensoesPermitidas
         )) {
@@ -43,7 +43,7 @@ if (isset($_FILES["arquivo"])) {
                 exit();
             } else {
                 echo "Houve um erro ao enviar o arquivo.";
-                echo "<a href='index.php'>Voltar</a>";
+                echo "<a href='discos.php'>Voltar</a>";
             }
         }
     }

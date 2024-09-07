@@ -39,7 +39,7 @@
         </select>
 
         <label for="v1">Selecione o arquivo:</label>
-        <input type="file" name="arquivo" id="v1" accept="image/*">
+        <input type="file" name="arquivo" id="v1" accept="image/*" required>
         <input type="submit" value="Adicionar" name="Adicionar">
     </form>
 </body>
