@@ -21,8 +21,10 @@ echo "<tr>
         <td>Ano</td>
         <td>Artista</td>
         <td>Foto Capa</td>
-        <td>Fazer</td>
-        <td>Fazer</td>
+        <td>Excluir</td>
+        <td>Editar</td>
+        <td>Emprestar</td>
+
     </tr>";
 
 if ($resultado->num_rows == 0) {
@@ -34,8 +36,9 @@ if ($resultado->num_rows == 0) {
         echo "<td>{$linha['Ano']}</td>";
         echo "<td>{$linha['Nome']}</td>";
         echo "<td><img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px;'></td>";
-        echo "<td><a href='delDisco.php?idDisco={$linha['IdDisco']}'>Eliminar</a></td>";
+        echo "<td><a href='delDisco.php?idDisco={$linha['IdDisco']}'>Excluir</a></td>";
         echo "<td><a href='form_editDisco.php?idDisco={$linha['IdDisco']}'>Editar</a></td>";
+        echo "<td><a href='form_emprestarDisco.php?idDisco={$linha['IdDisco']}'>Emprestar</a></td>";
         echo "</tr>";
     }
 }

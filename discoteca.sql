@@ -42,7 +42,7 @@ CREATE TABLE `artista` (
 --
 
 CREATE TABLE `devolucao` (
-  `data` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `Data` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `IdDev` int(11) NOT NULL,
   `IdEmp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -71,6 +71,7 @@ CREATE TABLE `emprestimo` (
   `Nome` varchar(300) NOT NULL,
   `Email` varchar(300) NOT NULL,
   `Data` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `DevolucaoPrevista` timestamp NOT NULL DEFAULT DATE_ADD(current_timestamp(), INTERVAL 7 DAY),
   `IdEmp` int(11) NOT NULL,
   `IdDisco` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
