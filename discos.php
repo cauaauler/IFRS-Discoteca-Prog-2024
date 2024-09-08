@@ -58,6 +58,8 @@ echo "</table>";
 echo "<br>";
 echo "<a href='form_addDisco.php'>Adicionar Disco</a>";
 echo "<br>";
+echo "<a href='discosEmprestados.php'>Discos Emprestados</a>";
+echo "<br>";
 echo "<a href='index.php'>Voltar</a>";
 
 $db->close();

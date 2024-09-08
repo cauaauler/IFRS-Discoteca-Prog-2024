@@ -6,7 +6,7 @@ if ($db->connect_error) {
 }
 
 date_default_timezone_set('America/Sao_Paulo');
-$dataAtual = date('Y-m-d H:i:s');
+$dataAtual = date('Y-m-d');
 
 if (isset($_POST['Nome']) && isset($_POST['Email']) && isset($_POST['DevPrevista']) && isset($_POST['IdDisco'])) {    // Validando os dados do formulário
     if (strlen($_POST['Nome']) > 50 || strlen($_POST['Nome']) == 0) {

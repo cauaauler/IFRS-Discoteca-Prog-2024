@@ -8,18 +8,28 @@ if (isset($_GET['IdArtista'])) {
 
     $idArtista = intval($_GET['IdArtista']);
 
-    // Verificar se o artista é foreign key na tabela discos
-    $deleteDiscoQuery = "
+    // Excluir registros da tabela emprestimo que referenciam discos do artista
+    $query = "
+        DELETE e
+        FROM emprestimo e
+        JOIN disco d ON e.IdDisco = d.IdDisco
+        WHERE d.IdArtista = {$idArtista}
+    ";
+    $db->query($query);
+
+    // Excluir os discos do artista
+    $query = "
         DELETE FROM disco
         WHERE IdArtista = {$idArtista}
     ";
-    $deleteArtistaQuery = "
+    $db->query($query);
+
+    // Excluir o artista
+    $query = "
         DELETE FROM artista
         WHERE IdArtista = {$idArtista}
     ";
-
-    $db->query($deleteDiscoQuery);
-    $db->query($deleteArtistaQuery);
+    $db->query($query);
 
     header("Location: artistas.php");
     $db->close();
