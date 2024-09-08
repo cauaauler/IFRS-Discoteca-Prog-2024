@@ -44,7 +44,7 @@ if ($resultado->num_rows == 0) {
 
 echo "</table>";
 echo "<br>";
-echo "<a href='index.php'>Voltar</a>";
+echo "<a href='discos.php'>Voltar</a>";
 
 $db->close();
 ?>

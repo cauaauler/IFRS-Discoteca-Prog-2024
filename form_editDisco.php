@@ -38,7 +38,7 @@
         echo "<input type='text' id='idDisco' name='idDisco' required value={$idDisco} hidden>";
         ?>
         <br>
-        <input type='file' name='arquivo' id='v1' accept='image/*'>;
+        <input type='file' name='arquivo' id='v1' accept='image/*'>
 
         <input type="submit" value="editar" name="botao">
 
