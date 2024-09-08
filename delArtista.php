@@ -8,6 +8,16 @@ if (isset($_GET['IdArtista'])) {
 
     $idArtista = intval($_GET['IdArtista']);
 
+    // Excluir registros da tabela devolucao que referenciam discos do artista
+    $query = "
+        DELETE de
+        FROM devolucao de
+        JOIN emprestimo e ON de.IdEmp = e.IdEmp
+        JOIN disco d ON e.IdDisco = d.IdDisco
+        WHERE d.IdArtista = {$idArtista}
+    ";
+    $db->query($query);
+
     // Excluir registros da tabela emprestimo que referenciam discos do artista
     $query = "
         DELETE e
