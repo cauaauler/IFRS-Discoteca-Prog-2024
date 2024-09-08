@@ -17,7 +17,6 @@ if ($_POST['Ano'] > $anoAtual || $_POST['Ano'] < 1850) {
     $resultado = $db->query($query);
 
     if ($resultado) {
-        // Obter o ID do disco após a inserção
         $idDisco = $db->insert_id;
         $target_dir = "uploads/";
 
@@ -37,7 +36,7 @@ if ($_POST['Ano'] > $anoAtual || $_POST['Ano'] < 1850) {
             $novoNomeArquivo = $idDisco . "_" . preg_replace("/[^a-zA-Z0-9]/", "_", $_POST['Titulo']) . "." . $imageFileType;
             $target_file = $target_dir . $novoNomeArquivo;
 
-            // Caso a pasta não exista, cria-a
+            // Caso a pasta não exista, cria ela
             if (!is_dir($target_dir)) {
                 mkdir($target_dir, 0755, true);
             }
@@ -50,12 +49,12 @@ if ($_POST['Ano'] > $anoAtual || $_POST['Ano'] < 1850) {
                     header('Location: discos.php');
                     exit();
                 } else {
-                    echo "Desculpe, houve um erro ao atualizar o registro do disco.";
+                    echo "Houve um erro ao atualizar o registro do disco.";
                     echo "<a href='discos.php'>Voltar</a>";
                     exit();
                 }
             } else {
-                echo "Desculpe, houve um erro ao enviar o arquivo.";
+                echo "Houve um erro ao enviar o arquivo.";
                 echo "<a href='discos.php'>Voltar</a>";
                 exit();
             }
@@ -65,7 +64,7 @@ if ($_POST['Ano'] > $anoAtual || $_POST['Ano'] < 1850) {
             exit();
         }
     } else {
-        echo "Desculpe, houve um erro ao adicionar o disco.";
+        echo "Houve um erro ao adicionar o disco.";
         echo "<a href='discos.php'>Voltar</a>";
         exit();
     }
