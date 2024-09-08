@@ -26,6 +26,7 @@ echo "<tr>
         <td>Excluir</td>
         <td>Editar</td>
         <td>Emprestar</td>
+        <td>Devolução</td>
 
     </tr>";
 
@@ -44,6 +45,7 @@ if ($resultado->num_rows == 0) {
             echo "<td><span style='color: gray; text-decoration: none;'>Não é possível editar</span></td>";
             echo "<td><a href='discoEmprestado.php?idDisco={$linha['IdDisco']}'>Ver emprestimo</a></td>";
             // echo "<td><span style='color: gray; text-decoration: none;'>Emprestado</span></td>";
+            echo "<td><a href='devolucaoDisco.php?idDisco={$linha['IdDisco']}'>Devolvido</a></td>";
 
         } else {
             echo "<td><a href='delDisco.php?idDisco={$linha['IdDisco']}'>Excluir</a></td>";
