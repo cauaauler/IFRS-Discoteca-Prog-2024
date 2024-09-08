@@ -28,7 +28,8 @@ if (isset($_POST['Nome']) && isset($_POST['Email']) && isset($_POST['DevPrevista
         $query = "UPDATE disco SET Emprestado = 1 WHERE IdDisco = $_POST[IdDisco]";
         $db->query($query);
 
-        header("Location: discos.php");
+        echo $_POST['IdDisco'];
+        // header("Location: discos.php");
     }
 } else {
 

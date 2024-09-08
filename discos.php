@@ -45,12 +45,14 @@ if ($resultado->num_rows == 0) {
             echo "<td><span style='color: gray; text-decoration: none;'>Não é possível editar</span></td>";
             echo "<td><a href='discoEmprestado.php?idDisco={$linha['IdDisco']}'>Ver emprestimo</a></td>";
             // echo "<td><span style='color: gray; text-decoration: none;'>Emprestado</span></td>";
-            echo "<td><a href='devolucaoDisco.php?idDisco={$linha['IdDisco']}'>Devolvido</a></td>";
+            echo "<td><a href='devolverDisco.php?idDisco={$linha['IdDisco']}'>Devolver</a></td>";
 
         } else {
             echo "<td><a href='delDisco.php?idDisco={$linha['IdDisco']}'>Excluir</a></td>";
             echo "<td><a href='form_editDisco.php?idDisco={$linha['IdDisco']}'>Editar</a></td>";
             echo "<td><a href='form_emprestarDisco.php?idDisco={$linha['IdDisco']}'>Emprestar</a></td>";
+            echo "<td><span style='color: gray; text-decoration: none;'>Disponível</span></td>";
+
         }
         echo "</tr>";
     }
