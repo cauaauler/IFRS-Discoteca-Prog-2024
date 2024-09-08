@@ -1,0 +1,28 @@
+body {
+    font-size: 24px; /* Aumenta o tamanho da fonte */
+    background-color: #282c34; /* Fundo cinza escuro */
+    color: #FFFFFF; /* Texto branco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura total da viewport */
+    margin: 0;
+    text-align: center; /* Centraliza o texto */
+}
+
+a {
+    display: inline-block; /* Mantém os links inline, mas permite padding */
+    margin: 10px;
+    padding: 15px 30px; /* Adiciona espaço interno aos links */
+    background-color: #61dafb; /* Fundo azul claro */
+    color: #282c34; /* Texto cinza escuro */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-size: 28px; /* Aumenta o tamanho da fonte dos links */
+    border-radius: 8px; /* Adiciona bordas arredondadas */
+    transition: background-color 0.3s, color 0.3s; /* Adiciona transição suave */
+}
+
+a:hover {
+    background-color: #21a1f1; /* Fundo azul mais escuro ao passar o mouse */
+    color: #FFFFFF; /* Texto branco ao passar o mouse */
+}
