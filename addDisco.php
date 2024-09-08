@@ -23,7 +23,7 @@ if ($_POST['Ano'] > $anoAtual || $_POST['Ano'] < 1850) {
 
         if ($_FILES['arquivo']['error'] == 0) {
             $imageFileType = strtolower(pathinfo($_FILES["arquivo"]["name"], PATHINFO_EXTENSION));
-            $extensoesPermitidas = ["jpg", "jpeg", "png", "gif", "bmp", "webp"];
+            $extensoesPermitidas = ["jpg", "jpeg", "png", "gif", "bmp", "webp", "aviff"];
             $check = getimagesize($_FILES["arquivo"]["tmp_name"]);
 
             // Checar se o arquivo é uma imagem válida e se a extensão é permitida
