@@ -75,6 +75,7 @@ CREATE TABLE `emprestimo` (
   `DevolucaoPrevista` timestamp NOT NULL DEFAULT DATE_ADD(current_timestamp(), INTERVAL 7 DAY),
   `IdEmp` int(11) NOT NULL,
   `IdDisco` int(11) NOT NULL
+  `Devolvido` boolean NOT NULL DEFAULT FALSE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

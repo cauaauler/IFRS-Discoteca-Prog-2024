@@ -32,14 +32,16 @@ if ($resultado->num_rows == 0) {
     echo "<tr><td colspan='7'>Não há discos emprestados</td></tr>";
 } else {
     while ($linha = $resultado->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>{$linha['Titulo']}</td>";
-        echo "<td><img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px;'></td>";
-        echo "<td>{$linha['Nome']}</td>";
-        echo "<td>{$linha['Email']}</td>";
-        echo "<td>" . date('d-m-Y', strtotime($linha['Data'])) . "</td>";
-        echo "<td>" . date('d-m-Y', strtotime($linha['DevolucaoPrevista'])) . "</td>";
-        echo "</tr>";
+        if ($linha['Devolvido'] == 0) {
+            echo "<tr>";
+            echo "<td>{$linha['Titulo']}</td>";
+            echo "<td><img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px;'></td>";
+            echo "<td>{$linha['Nome']}</td>";
+            echo "<td>{$linha['Email']}</td>";
+            echo "<td>" . date('d-m-Y', strtotime($linha['Data'])) . "</td>";
+            echo "<td>" . date('d-m-Y', strtotime($linha['DevolucaoPrevista'])) . "</td>";
+            echo "</tr>";
+        }
     }
 }
 
