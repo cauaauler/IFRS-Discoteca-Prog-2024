@@ -58,7 +58,8 @@ CREATE TABLE `disco` (
   `IdArtista` int(11) NOT NULL,
   `Ano` int(4) NOT NULL,
   `FotoCapa` varchar(300) NOT NULL,
-  `IdDisco` int(11) NOT NULL
+  `IdDisco` int(11) NOT NULL,
+  `Emprestado` boolean NOT NULL DEFAULT FALSE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

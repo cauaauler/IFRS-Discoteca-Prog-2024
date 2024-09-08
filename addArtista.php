@@ -1,7 +1,7 @@
 <?php
     $db = new mysqli("localhost", "root", "", "discoteca");
-if (strlen($_POST['Nome']) > 30) {
-    echo "O nome precisa ter menos de 30 caracteres";
+if (strlen($_POST['Nome']) > 30 || strlen($_POST['Nome']) == 0) {
+    echo "O nome precisa ter entre 1 e 30 caracteres";
     echo "</br>";
     echo "<a href='artistas.php'>Voltar</a>";
 } else {

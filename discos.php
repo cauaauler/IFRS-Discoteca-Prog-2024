@@ -12,7 +12,9 @@ if (!in_array($ordenar, $colunas_validas)) {
     $ordenar = 'Titulo'; // valor padrão
 }
 
-$query = "SELECT * FROM disco d JOIN artista a ON d.IdArtista = a.IdArtista ORDER BY $ordenar ASC";
+$query = "SELECT * FROM disco d 
+JOIN artista a ON d.IdArtista = a.IdArtista 
+ORDER BY $ordenar ASC";
 $resultado = $db->query($query);
 
 echo "<table border='1' style='border-style:dashed;'>";
@@ -28,7 +30,7 @@ echo "<tr>
     </tr>";
 
 if ($resultado->num_rows == 0) {
-    echo "<tr><td colspan='6'>Não há discos cadastrados</td></tr>";
+    echo "<tr><td colspan='7'>Não há discos cadastrados</td></tr>";
 } else {
     while ($linha = $resultado->fetch_assoc()) {
         echo "<tr>";
@@ -36,9 +38,18 @@ if ($resultado->num_rows == 0) {
         echo "<td>{$linha['Ano']}</td>";
         echo "<td>{$linha['Nome']}</td>";
         echo "<td><img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px;'></td>";
-        echo "<td><a href='delDisco.php?idDisco={$linha['IdDisco']}'>Excluir</a></td>";
-        echo "<td><a href='form_editDisco.php?idDisco={$linha['IdDisco']}'>Editar</a></td>";
-        echo "<td><a href='form_emprestarDisco.php?idDisco={$linha['IdDisco']}'>Emprestar</a></td>";
+
+        if ($linha['Emprestado'] == 1) {
+            echo "<td><span style='color: gray; text-decoration: none;'>Não é possível excluir</span></td>";
+            echo "<td><span style='color: gray; text-decoration: none;'>Não é possível editar</span></td>";
+            echo "<td><a href='discoEmprestado.php?idDisco={$linha['IdDisco']}'>Ver emprestimo</a></td>";
+            // echo "<td><span style='color: gray; text-decoration: none;'>Emprestado</span></td>";
+
+        } else {
+            echo "<td><a href='delDisco.php?idDisco={$linha['IdDisco']}'>Excluir</a></td>";
+            echo "<td><a href='form_editDisco.php?idDisco={$linha['IdDisco']}'>Editar</a></td>";
+            echo "<td><a href='form_emprestarDisco.php?idDisco={$linha['IdDisco']}'>Emprestar</a></td>";
+        }
         echo "</tr>";
     }
 }
