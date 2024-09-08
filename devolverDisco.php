@@ -9,12 +9,13 @@ $idDisco = intval($_GET['idDisco']);
 $query = "UPDATE disco SET Emprestado = 0 WHERE IdDisco={$idDisco}";
 $db->query($query);
 
-$query = "SELECT idEmp FROM emprestimo
+$query = "SELECT IdEmp FROM emprestimo
 WHERE idDisco = {$idDisco} 
-AND Devolvido = 0";
+AND Devolvido = '0'";
 $resultado = $db->query($query);
 
 while ($linha = $resultado->fetch_assoc()) {
+    date_default_timezone_set('America/Sao_Paulo');
     $currentDate = date('Y-m-d h:i:s');
     $query = "INSERT INTO devolucao (Data, IdEmp) VALUES ('$currentDate', '$linha[IdEmp]')";
     $db->query($query);
