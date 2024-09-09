@@ -17,53 +17,31 @@ JOIN artista a ON d.IdArtista = a.IdArtista
 ORDER BY $ordenar ASC";
 $resultado = $db->query($query);
 
-echo "<table border='1' style='border-style:dashed;'>";
-echo "<tr>
-        <td>Título</td>
-        <td>Ano</td>
-        <td>Artista</td>
-        <td>Foto Capa</td>
-        <td>Excluir</td>
-        <td>Editar</td>
-        <td>Emprestar</td>
-        <td>Devolução</td>
-
-    </tr>";
-
 if ($resultado->num_rows == 0) {
-    echo "<tr><td colspan='7'>Não há discos cadastrados</td></tr>";
+    echo "<p>Não há discos cadastrados</p>";
 } else {
+    echo "<div class='card-container'>";
     while ($linha = $resultado->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>{$linha['Titulo']}</td>";
-        echo "<td>{$linha['Ano']}</td>";
-        echo "<td>{$linha['Nome']}</td>";
-        echo "<td><img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px;'></td>";
+        echo "<div class='card'>";
+        echo "<h2>{$linha['Titulo']}</h2>";
+        echo "<p><strong>Ano:</strong> {$linha['Ano']}</p>";
+        echo "<p><strong>Artista:</strong> {$linha['Nome']}</p>";
+        echo "<img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px; height:auto;'>";
 
         if ($linha['Emprestado'] == 1) {
-            echo "<td><span style='color: gray; text-decoration: none;'>Não é possível excluir</span></td>";
-            echo "<td><span style='color: gray; text-decoration: none;'>Não é possível editar</span></td>";
-            echo "<td><a href='discoEmprestado.php?idDisco={$linha['IdDisco']}'>Ver emprestimo</a></td>";
-            echo "<td><a href='devolverDisco.php?idDisco={$linha['IdDisco']}'>Devolver</a></td>";
-
+            echo "<p><span style='color: gray;'>Não é possível excluir ou editar</span></p>";
+            echo "<a href='discoEmprestado.php?idDisco={$linha['IdDisco']}'>Ver emprestimo</a>";
+            echo "<a href='devolverDisco.php?idDisco={$linha['IdDisco']}'>Devolver</a>";
         } else {
-            echo "<td><a href='delDisco.php?idDisco={$linha['IdDisco']}'>Excluir</a></td>";
-            echo "<td><a href='form_editDisco.php?idDisco={$linha['IdDisco']}'>Editar</a></td>";
-            echo "<td><a href='form_emprestarDisco.php?idDisco={$linha['IdDisco']}'>Emprestar</a></td>";
-            echo "<td><span style='color: gray; text-decoration: none;'>Disponível</span></td>";
-
+            echo "<a href='delDisco.php?idDisco={$linha['IdDisco']}'>Excluir</a>";
+            echo "<a href='form_editDisco.php?idDisco={$linha['IdDisco']}'>Editar</a>";
+            echo "<a href='form_emprestarDisco.php?idDisco={$linha['IdDisco']}'>Emprestar</a>";
+            echo "<p><span style='color: gray;'>Disponível</span></p>";
         }
-        echo "</tr>";
+        echo "</div>"; // Fechando o card
     }
+    echo "</div>"; // Fechando o card-container
 }
-
-echo "</table>";
-echo "<br>";
-echo "<a href='form_addDisco.php'>Adicionar Disco</a>";
-echo "<br>";
-echo "<a href='discosEmprestados.php'>Discos Emprestados</a>";
-echo "<br>";
-echo "<a href='index.php'>Voltar</a>";
 
 $db->close();
 ?>
@@ -75,6 +53,7 @@ $db->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -86,6 +65,12 @@ $db->close();
             <option value="Ano" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Ano' ? 'selected' : '' ?>>Ano</option>
         </select>
     </form>
+    <br>
+    <a href='form_addDisco.php'>Adicionar Disco</a>
+    <br>
+    <a href='discosEmprestados.php'>Discos Emprestados</a>
+    <br>
+    <a href='index.php'>Voltar</a>
 </body>
 
 </html>
