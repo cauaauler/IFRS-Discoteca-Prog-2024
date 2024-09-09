@@ -48,5 +48,3 @@ if ($resultado->num_rows == 0) {
 
 echo "</table>";
 echo "<a href='form_addArtista.php'>adicionar artista</a>";
-echo "<br>";
-echo "<a href='index.php'>Voltar</a>";
