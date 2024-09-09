@@ -9,13 +9,19 @@
 </head>
 
 <body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.php">Página Inicial</a></li>
+            <li style="float:right; color: white;">
+            </li>
+        </ul>
+    </nav>
     <form action="addArtista.php" method="post">
         <label for="Nome">Nome:</label>
         <input type="text" id="Nome" name='Nome' required>
         <br>
         <input type="submit" value="adicionar" name="botao">
     </form>
-    <a href='artistas.php'>Voltar</a>
 
 </body>
 
