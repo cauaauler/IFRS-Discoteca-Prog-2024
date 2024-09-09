@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `discoteca`
 --
-
--- --------------------------------------------------------
+CREATE DATABASE IF NOT EXISTS `discoteca` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `discoteca`;
 
 --
 -- Estrutura para tabela `artista`
