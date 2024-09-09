@@ -3,6 +3,7 @@
 }
 body{
     margin: 0px;
+    background-color: #AEB8FE;
 }
 
 /* Container flexível para os cards */
@@ -11,18 +12,20 @@ body{
     /* gap é maravilhoso, é literalmente um gap, não é que nem o margin que soma */
     gap: 50px;
     padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Estilo de cada card individual */
 .card {
-    border: 1px solid #ccc;
+    border: 2px solid #4E52BE;
     border-radius: 10px;
-    padding: 20px;
-    flex-basis: 200px; /* Define a largura inicial do card */
+    padding: 10px;
+    flex-basis: 300px; /* Define a largura inicial do card */
     flex-shrink: 0; /* Evita que o card encolha */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: #fff;
+    background-color: #bfc6ff;
     transition: transform 0.3s;
 }
 
@@ -33,8 +36,8 @@ body{
 
 /* Estilo da imagem dentro do card */
 .card img {
-    width: 150px; /* Largura fixa para todas as imagens */
-    height: 150px; /* Altura fixa */
+    max-width: 300px; /* Largura fixa para todas as imagens */
+    max-height: auto; /* Altura fixa */
     object-fit: cover; /* Garante que a imagem ocupe o espaço sem distorção */
     margin-bottom: 10px;
 }
@@ -57,7 +60,7 @@ body{
     margin: 0;
     padding: 0;
     overflow: hidden;   
-    background-color: #333; 
+    background-color: #4E52BE; 
 }
 
 .navbar li {
@@ -73,7 +76,7 @@ body{
 }
 
 .navbar li a:hover {
-    background-color: #111; /* Cor de fundo quando passar o mouse */
+    background-color: #311e9c; /* Cor de fundo quando passar o mouse */
 }
 
 /* Estilo do formulário de ordenação dentro da navbar */
@@ -85,9 +88,9 @@ body{
 
 /* Estilo do select para ordenação */
 .navbar select {
-    background-color: #333;
+    background-color: #311e9c;
     color: white;
-    border: 1px solid #575757;
+    border: 1px solid #4028c9;
     font-size: 16px;
     border-radius: 4px;
     outline: none;
@@ -96,7 +99,7 @@ body{
 
 /* Efeito de hover no select */
 .navbar select:hover {
-    background-color: #575757;
+    background-color: #4028c9;
 }
 
 /* Responsividade para a navbar */
