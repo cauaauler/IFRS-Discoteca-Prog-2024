@@ -16,6 +16,16 @@
             <li><a href="index.php">Página Inicial</a></li>
             <li style="float:right; color: white;">
             </li>
+            <li style="float:right; color: white;">
+                <form method="GET" action="">
+                    <label for="ordenar">Ordenar por:</label>
+                    <select name="ordenar" id="ordenar" onchange="this.form.submit()">
+                        <option value="Nome" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Nome' ? 'selected' : '' ?>>Nome</option>
+                        <option value="Data" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Data' ? 'selected' : '' ?>>Data</option>
+                        <option value="DevolucaoPrevista" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'DevolucaoPrevista' ? 'selected' : '' ?>>Devolução</option>
+                    </select>
+                </form>
+            </li>
         </ul>
     </nav>
 
@@ -74,26 +84,3 @@ echo "</table>";
 echo "<br>";
 
 $db->close();
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <form method="GET" action="">
-        <label for="ordenar">Ordenar por:</label>
-        <select name="ordenar" id="ordenar" onchange="this.form.submit()">
-            <option value="Nome" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Nome' ? 'selected' : '' ?>>Nome</option>
-            <option value="Data" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Data' ? 'selected' : '' ?>>Data</option>
-            <option value="DevolucaoPrevista" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'DevolucaoPrevista' ? 'selected' : '' ?>>Devolução</option>
-        </select>
-    </form>
-</body>
-
-</html>
