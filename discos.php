@@ -14,9 +14,9 @@
         <!-- Nav bar -->
         <nav>
             <ul class="navbar">
-                <li><a href="index.php">Início</a></li>
                 <li><a href="form_addDisco.php">Adicionar Disco</a></li>
                 <li><a href="discosEmprestados.php">Discos Emprestados</a></li>
+                <li><a href='artistas.php'>Ver Artistas</a></li>
                 <li style="float:right; color: white;">
                     <form method="GET" action="">
                         <label for="ordenar">Ordenar por:</label>
