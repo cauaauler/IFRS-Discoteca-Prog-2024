@@ -1,3 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="discos.css">
+</head>
+
+<body>
+
+    <body>
+        <!-- Nav bar -->
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.php">Início</a></li>
+                <li><a href="form_addDisco.php">Adicionar Disco</a></li>
+                <li><a href="discosEmprestados.php">Discos Emprestados</a></li>
+                <li style="float:right; color: white;">
+                    <form method="GET" action="">
+                        <label for="ordenar">Ordenar por:</label>
+                        <select name="ordenar" id="ordenar" onchange="this.form.submit()">
+                            <option value="Titulo" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Titulo' ? 'selected' : '' ?>>Título</option>
+                            <option value="Nome" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Nome' ? 'selected' : '' ?>>Artista</option>
+                            <option value="Ano" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Ano' ? 'selected' : '' ?>>Ano</option>
+                        </select>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+
+
+        <br>
+    </body>
+
+</html>
+
 <?php
 $db = new mysqli("localhost", "root", "", "discoteca");
 
@@ -44,33 +82,3 @@ if ($resultado->num_rows == 0) {
 }
 
 $db->close();
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="discos.css">
-</head>
-
-<body>
-    <form method="GET" action="">
-        <label for="ordenar">Ordenar por:</label>
-        <select name="ordenar" id="ordenar" onchange="this.form.submit()">
-            <option value="Titulo" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Titulo' ? 'selected' : '' ?>>Título</option>
-            <option value="Nome" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Nome' ? 'selected' : '' ?>>Artista</option>
-            <option value="Ano" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Ano' ? 'selected' : '' ?>>Ano</option>
-        </select>
-    </form>
-    <br>
-    <a href='form_addDisco.php'>Adicionar Disco</a>
-    <br>
-    <a href='discosEmprestados.php'>Discos Emprestados</a>
-    <br>
-    <a href='index.php'>Voltar</a>
-</body>
-
-</html>

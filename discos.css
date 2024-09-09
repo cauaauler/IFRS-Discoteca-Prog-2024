@@ -1,32 +1,126 @@
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-        }
+* {
+    text-align: center;
+}
+body{
+    margin: 0px;
+}
 
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 20px;
-            width: 200px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+/* Container flexível para os cards */
+.card-container {
+    display: flex;    
+    /* gap é maravilhoso, é literalmente um gap, não é que nem o margin que soma */
+    gap: 50px;
+    padding: 20px;
+}
 
-        .card img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
+/* Estilo de cada card individual */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    flex-basis: 200px; /* Define a largura inicial do card */
+    flex-shrink: 0; /* Evita que o card encolha */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s;
+}
 
-        .card a {
-            display: block;
-            margin-top: 5px;
-            color: #3772FF;
-            text-decoration: none;
-        }
+/* muito daora */
+.card:hover {
+    transform: scale(1.05);
+}
 
-        .card a:hover {
-            text-decoration: underline;
-        }
+/* Estilo da imagem dentro do card */
+.card img {
+    width: 150px; /* Largura fixa para todas as imagens */
+    height: 150px; /* Altura fixa */
+    object-fit: cover; /* Garante que a imagem ocupe o espaço sem distorção */
+    margin-bottom: 10px;
+}
+
+/* Links dentro dos cards */
+.card a {
+    display: block;
+    margin-top: 5px;
+    color: #3772FF;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para a barra de navegação */
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;   
+    background-color: #333; 
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #111; /* Cor de fundo quando passar o mouse */
+}
+
+/* Estilo do formulário de ordenação dentro da navbar */
+.navbar form {
+    display: inline-block;
+    margin: 0;
+    padding: 14px 20px;
+}
+
+/* Estilo do select para ordenação */
+.navbar select {
+    background-color: #333;
+    color: white;
+    border: 1px solid #575757;
+    font-size: 16px;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Efeito de hover no select */
+.navbar select:hover {
+    background-color: #575757;
+}
+
+/* Responsividade para a navbar */
+@media screen and (max-width: 600px) {
+    .navbar li {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+
+    .navbar form {
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+/* Responsividade para os cards */
+@media screen and (max-width: 600px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex-basis: 100%;
+    }
+}
