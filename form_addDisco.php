@@ -40,10 +40,45 @@
 
         <label for="v1">Selecione o arquivo:</label>
         <input type="file" name="arquivo" id="v1" accept="image/*" required>
+        <div id="imagePreview"></div>
         <input type="submit" value="Adicionar" name="Adicionar">
     </form>
     <a href='index.php'>Voltar</a>
 
+    <script>
+        // Adiciona um evento 'change' ao elemento de input com id 'v1'
+document.getElementById('v1').addEventListener('change', function(event) {
+    // Obtém o primeiro arquivo selecionado pelo usuário
+    const file = event.target.files[0];
+    
+    // Verifica se um arquivo foi selecionado
+    if (file) {
+        // Cria um novo objeto FileReader para ler o conteúdo do arquivo
+        const reader = new FileReader();
+        
+        // Define uma função a ser executada quando a leitura do arquivo for concluída
+        reader.onload = function(e) {
+            // Cria um novo elemento de imagem
+            const img = document.createElement('img');
+            
+            // Define o atributo 'src' da imagem para o resultado da leitura do arquivo
+            img.src = e.target.result;
+            
+            // Define a largura máxima da imagem (ajuste conforme necessário)
+            img.style.maxWidth = '300px';
+            
+            // Limpa qualquer conteúdo anterior na div de pré-visualização
+            document.getElementById('imagePreview').innerHTML = '';
+            
+            // Adiciona a nova imagem à div de pré-visualização
+            document.getElementById('imagePreview').appendChild(img);
+        };
+        
+        // Inicia a leitura do arquivo como uma URL de dados
+        reader.readAsDataURL(file);
+    }
+});
+    </script>
 </body>
 
 </html>
