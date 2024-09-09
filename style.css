@@ -47,13 +47,21 @@ body{
 
 /* Links dentro dos cards */
 .card a {
+    width: 100px;
     display: block;
     margin-top: 5px;
-    color: #3772FF;
+    color: #94b4ff;
     text-decoration: none;
+    margin: 10px 0;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.2s ease-in-out;
+    background-color: #4E52BE;
 }
 
 .card a:hover {
+    background-color: #5d62e7;
     text-decoration: underline;
 }
 

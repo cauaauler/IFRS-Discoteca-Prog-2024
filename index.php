@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="discos.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -56,7 +56,7 @@ ORDER BY $ordenar ASC";
 $resultado = $db->query($query);
 
 if ($resultado->num_rows == 0) {
-    echo "<p>Não há discos cadastrados</p>";
+    echo "<h1>Não há discos cadastrados</h1>";
 } else {
     echo "<div class='card-container'>";
     while ($linha = $resultado->fetch_assoc()) {
@@ -74,7 +74,7 @@ if ($resultado->num_rows == 0) {
             echo "<a href='delDisco.php?idDisco={$linha['IdDisco']}'>Excluir</a>";
             echo "<a href='form_editDisco.php?idDisco={$linha['IdDisco']}'>Editar</a>";
             echo "<a href='form_emprestarDisco.php?idDisco={$linha['IdDisco']}'>Emprestar</a>";
-            echo "<p><span style='color: gray;'>Disponível</span></p>";
+            echo "<p><span style='color: black;'>Disponível</span></p>";
         }
         echo "</div>"; // Fechando o card
     }
