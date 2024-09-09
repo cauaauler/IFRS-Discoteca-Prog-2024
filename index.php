@@ -67,7 +67,7 @@ if ($resultado->num_rows == 0) {
         echo "<img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px; height:auto;'>";
 
         if ($linha['Emprestado'] == 1) {
-            echo "<p><span style='color: gray;'>Não é possível excluir ou editar</span></p>";
+            echo "<p><span style='color: black;'>Não é possível excluir ou editar</span></p>";
             echo "<a href='discoEmprestado.php?idDisco={$linha['IdDisco']}'>Ver emprestimo</a>";
             echo "<a href='devolverDisco.php?idDisco={$linha['IdDisco']}'>Devolver</a>";
         } else {

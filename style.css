@@ -23,7 +23,7 @@ body{
 .card {
     border: 2px solid #4E52BE;
     border-radius: 10px;
-    padding: 10px;
+    padding: 30px;
     flex-basis: 300px; /* Define a largura inicial do card */
     flex-shrink: 0; /* Evita que o card encolha */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -39,8 +39,8 @@ body{
 
 /* Estilo da imagem dentro do card */
 .card img {
-    max-width: 300px; /* Largura fixa para todas as imagens */
-    max-height: auto; /* Altura fixa */
+    max-width: 600px; /* Largura fixa para todas as imagens */
+    max-height: 300px; /* Altura fixa */
     object-fit: cover; /* Garante que a imagem ocupe o espaço sem distorção */
     margin-bottom: 10px;
 }
