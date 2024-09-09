@@ -26,4 +26,4 @@ $query = "UPDATE emprestimo SET Devolvido = 1 WHERE IdDisco={$idDisco}";
 $db->query($query);
 
 $db->close();
-header('Location: discos.php');
+header('Location: index.php');

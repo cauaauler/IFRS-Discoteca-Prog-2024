@@ -25,7 +25,7 @@
         <input type="submit" value="Adicionar" name="Adicionar">
     </form>
 
-    <a href='discos.php'>Voltar</a>
+    <a href='index.php'>Voltar</a>
 
 </body>
 

@@ -34,7 +34,7 @@ if (isset($_GET['idDisco'])) {
 
     $result = $db->query($deleteQuery);
 
-    header("Location: discos.php");
+    header("Location: index.php");
 
     $db->close();
 }
