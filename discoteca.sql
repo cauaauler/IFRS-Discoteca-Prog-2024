@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/08/2024 às 13:58
+-- Tempo de geração: 09/09/2024 às 20:55
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -21,9 +21,6 @@ SET time_zone = "+00:00";
 -- Banco de dados: `discoteca`
 --
 
-CREATE DATABASE IF NOT EXISTS `discoteca` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `discoteca`;
-
 -- --------------------------------------------------------
 
 --
@@ -34,6 +31,13 @@ CREATE TABLE `artista` (
   `Nome` varchar(300) NOT NULL,
   `IdArtista` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `artista`
+--
+
+INSERT INTO `artista` (`Nome`, `IdArtista`) VALUES
+('xama', 5);
 
 -- --------------------------------------------------------
 
@@ -47,6 +51,14 @@ CREATE TABLE `devolucao` (
   `IdEmp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `devolucao`
+--
+
+INSERT INTO `devolucao` (`Data`, `IdDev`, `IdEmp`) VALUES
+('2024-09-09 06:54:14', 25, 46),
+('2024-09-09 06:54:53', 26, 49);
+
 -- --------------------------------------------------------
 
 --
@@ -59,8 +71,16 @@ CREATE TABLE `disco` (
   `Ano` int(4) NOT NULL,
   `FotoCapa` varchar(300) NOT NULL,
   `IdDisco` int(11) NOT NULL,
-  `Emprestado` boolean NOT NULL DEFAULT FALSE
+  `Emprestado` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `disco`
+--
+
+INSERT INTO `disco` (`Titulo`, `IdArtista`, `Ano`, `FotoCapa`, `IdDisco`, `Emprestado`) VALUES
+('roger', 5, 2023, 'uploads/20_roger.jpg', 20, 1),
+('32131', 5, 2023, 'uploads/22_32131.jpg', 22, 0);
 
 -- --------------------------------------------------------
 
@@ -71,12 +91,21 @@ CREATE TABLE `disco` (
 CREATE TABLE `emprestimo` (
   `Nome` varchar(300) NOT NULL,
   `Email` varchar(300) NOT NULL,
-  `Data` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `DevolucaoPrevista` timestamp NOT NULL DEFAULT DATE_ADD(current_timestamp(), INTERVAL 7 DAY),
+  `Data` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `DevolucaoPrevista` timestamp NOT NULL DEFAULT (current_timestamp() + interval 7 day),
   `IdEmp` int(11) NOT NULL,
-  `IdDisco` int(11) NOT NULL
-  `Devolvido` boolean NOT NULL DEFAULT FALSE
+  `IdDisco` int(11) NOT NULL,
+  `Devolvido` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `emprestimo`
+--
+
+INSERT INTO `emprestimo` (`Nome`, `Email`, `Data`, `DevolucaoPrevista`, `IdEmp`, `IdDisco`, `Devolvido`) VALUES
+('carlos', 'cauaaule@rgmail.com', '2024-09-09 15:54:14', '2024-09-18 03:00:00', 46, 20, 1),
+('roger', 'cauaauler@gmail.com', '2024-09-09 15:54:23', '2024-09-10 03:00:00', 48, 20, 0),
+('dasda', 'cauaauler@gmail.com', '2024-09-09 15:54:53', '2024-09-17 03:00:00', 49, 22, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -117,25 +146,25 @@ ALTER TABLE `emprestimo`
 -- AUTO_INCREMENT de tabela `artista`
 --
 ALTER TABLE `artista`
-  MODIFY `IdArtista` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdArtista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `devolucao`
 --
 ALTER TABLE `devolucao`
-  MODIFY `IdDev` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdDev` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `disco`
 --
 ALTER TABLE `disco`
-  MODIFY `IdDisco` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdDisco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `emprestimo`
 --
 ALTER TABLE `emprestimo`
-  MODIFY `IdEmp` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdEmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- Restrições para tabelas despejadas
