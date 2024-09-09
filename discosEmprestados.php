@@ -1,3 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empréstimos</title>
+    <link rel="stylesheet" href="discos.css">
+
+
+</head>
+
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.php">Página Inicial</a></li>
+            <li style="float:right; color: white;">
+            </li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
+
 <?php
 $db = new mysqli("localhost", "root", "", "discoteca");
 
@@ -32,7 +57,7 @@ if ($resultado->num_rows == 0) {
 } else {
     while ($linha = $resultado->fetch_assoc()) {
 
-        if($linha['Devolvido'] == 0){
+        if ($linha['Devolvido'] == 0) {
             echo "<tr>";
             echo "<td>{$linha['Titulo']}</td>";
             echo "<td><img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px;'></td>";
@@ -42,7 +67,6 @@ if ($resultado->num_rows == 0) {
             echo "<td>" . date('d-m-Y', strtotime($linha['DevolucaoPrevista'])) . "</td>";
             echo "</tr>";
         }
-
     }
 }
 

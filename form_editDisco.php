@@ -5,9 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>editar disco</title>
+    <link rel="stylesheet" href="discos.css">
+
 </head>
 
 <body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.php">Página Inicial</a></li>
+            <li style="float:right; color: white;">
+            </li>
+        </ul>
+    </nav>
     <form action="editdisco.php" method="post" enctype="multipart/form-data">
         <label for="Nome">Nome:</label>
         <?php
