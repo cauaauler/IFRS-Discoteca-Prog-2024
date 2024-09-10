@@ -159,3 +159,11 @@ body{
         width: 80%; /* Melhorar a usabilidade no celular */
     }
 }
+
+table {
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

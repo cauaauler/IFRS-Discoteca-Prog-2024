@@ -51,7 +51,7 @@ JOIN disco d ON d.IdDisco = e.IdDisco
 ORDER BY $ordenar ASC";
 $resultado = $db->query($query);
 
-echo "<table border='1' style='border-style:dashed;'>";
+echo "<table border='1'>";
 echo "<tr>
         <td>Título</td>
         <td>Foto Capa</td>
@@ -68,7 +68,7 @@ if ($resultado->num_rows == 0) {
 
         echo "<tr>";
         echo "<td>{$linha['Titulo']}</td>";
-        echo "<td><img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px;'></td>";
+        echo "<td><img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:150px;'></td>";
         echo "<td>{$linha['Nome']}</td>";
         echo "<td>{$linha['Email']}</td>";
         echo "<td>" . date('d-m-Y', strtotime($linha['Data'])) . "</td>";
