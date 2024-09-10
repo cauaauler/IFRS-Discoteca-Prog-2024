@@ -61,13 +61,13 @@ if ($resultado->num_rows == 0) {
     echo "<div class='card-container'>";
     while ($linha = $resultado->fetch_assoc()) {
         echo "<div class='card'>";
-        echo "<h2>{$linha['Titulo']}</h2>";
+        echo "<h1>{$linha['Titulo']}</h1>";
         echo "<p><strong>Ano:</strong> {$linha['Ano']}</p>";
         echo "<p><strong>Artista:</strong> {$linha['Nome']}</p>";
-        echo "<img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px; height:auto;'>";
+        echo "<img src='{$linha['FotoCapa']}' alt='Foto da Capa'>";
 
         if ($linha['Emprestado'] == 1) {
-            echo "<p><span style='color: black;'>Não é possível excluir ou editar</span></p>";
+            echo "<p><span style='color: black;'>*Não é possível excluir ou editar</span></p>";
             echo "<a href='discoEmprestado.php?idDisco={$linha['IdDisco']}'>Ver emprestimo</a>";
             echo "<a href='devolverDisco.php?idDisco={$linha['IdDisco']}'>Devolver</a>";
         } else {

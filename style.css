@@ -21,6 +21,9 @@ body{
 
 /* Estilo de cada card individual */
 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 2px solid #4E52BE;
     border-radius: 10px;
     padding: 30px;
@@ -39,8 +42,8 @@ body{
 
 /* Estilo da imagem dentro do card */
 .card img {
-    max-width: 600px; /* Largura fixa para todas as imagens */
-    max-height: 300px; /* Altura fixa */
+    max-width: 80%; /* Largura fixa para todas as imagens */
+    max-height: 60%; /* Altura fixa */
     object-fit: cover; /* Garante que a imagem ocupe o espaço sem distorção */
     margin-bottom: 10px;
 }
@@ -65,6 +68,10 @@ body{
     text-decoration: underline;
 }
 
+.card p {
+    margin: 6px;
+}
+
 /* Estilo para a barra de navegação */
 .navbar {
     list-style-type: none;
@@ -76,6 +83,7 @@ body{
 
 .navbar li {
     float: left;
+    padding: 0 10px 0 10px;
 }
 
 .navbar li a {
