@@ -12,7 +12,6 @@ body{
 /* Container flexível para os cards */
 .card-container {
     display: flex;    
-    /* gap é maravilhoso, é literalmente um gap, não é que nem o margin que soma */
     gap: 50px;
     padding: 20px;
     justify-content: center;
@@ -42,8 +41,8 @@ body{
 
 /* Estilo da imagem dentro do card */
 .card img {
-    max-width: 80%; /* Largura fixa para todas as imagens */
-    max-height: 60%; /* Altura fixa */
+    max-width: 80%;
+    min-width: 80%;
     object-fit: cover; /* Garante que a imagem ocupe o espaço sem distorção */
     margin-bottom: 10px;
 }

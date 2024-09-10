@@ -14,7 +14,7 @@
     <nav>
         <ul class="navbar">
             <li><a href="index.php">Página Inicial</a></li>
-            <li><a href='discosEmprestadosHistorico.php'>Histórico de Empréstimos</a></li>
+            <li><a href="discosEmprestados.php">Discos Emprestados</a></li>
             <li style="float:right; color: white;">
                 <form method="GET" action="">
                     <label for="ordenar">Ordenar por:</label>
@@ -66,16 +66,14 @@ if ($resultado->num_rows == 0) {
 } else {
     while ($linha = $resultado->fetch_assoc()) {
 
-        if ($linha['Devolvido'] == 0) {
-            echo "<tr>";
-            echo "<td>{$linha['Titulo']}</td>";
-            echo "<td><img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px;'></td>";
-            echo "<td>{$linha['Nome']}</td>";
-            echo "<td>{$linha['Email']}</td>";
-            echo "<td>" . date('d-m-Y', strtotime($linha['Data'])) . "</td>";
-            echo "<td>" . date('d-m-Y', strtotime($linha['DevolucaoPrevista'])) . "</td>";
-            echo "</tr>";
-        }
+        echo "<tr>";
+        echo "<td>{$linha['Titulo']}</td>";
+        echo "<td><img src='{$linha['FotoCapa']}' alt='Foto da Capa' style='width:100px;'></td>";
+        echo "<td>{$linha['Nome']}</td>";
+        echo "<td>{$linha['Email']}</td>";
+        echo "<td>" . date('d-m-Y', strtotime($linha['Data'])) . "</td>";
+        echo "<td>" . date('d-m-Y', strtotime($linha['DevolucaoPrevista'])) . "</td>";
+        echo "</tr>";
     }
 }
 

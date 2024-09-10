@@ -67,14 +67,13 @@ if ($resultado->num_rows == 0) {
         echo "<img src='{$linha['FotoCapa']}' alt='Foto da Capa'>";
 
         if ($linha['Emprestado'] == 1) {
-            echo "<p><span style='color: black;'>*Não é possível excluir ou editar</span></p>";
+            echo "<p><span style='color: black;'>Não é possível excluir ou editar</span></p>";
             echo "<a href='discoEmprestado.php?idDisco={$linha['IdDisco']}'>Ver emprestimo</a>";
             echo "<a href='devolverDisco.php?idDisco={$linha['IdDisco']}'>Devolver</a>";
         } else {
             echo "<a href='delDisco.php?idDisco={$linha['IdDisco']}'>Excluir</a>";
             echo "<a href='form_editDisco.php?idDisco={$linha['IdDisco']}'>Editar</a>";
             echo "<a href='form_emprestarDisco.php?idDisco={$linha['IdDisco']}'>Emprestar</a>";
-            echo "<p><span style='color: black;'>Disponível</span></p>";
         }
         echo "</div>"; // Fechando o card
     }
