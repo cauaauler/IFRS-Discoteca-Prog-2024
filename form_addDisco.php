@@ -52,7 +52,7 @@
             <label for="v1">Selecione o arquivo:</label>
             <input type="file" name="arquivo" id="v1" accept="image/*" required>
             <div id="imagePreview"></div>
-            <input type="submit" value="Adicionar" name="Adicionar" class="">
+            <input type="submit" value="Adicionar" name="Adicionar" class="enviar">
         </form>
     </div>
     <script>

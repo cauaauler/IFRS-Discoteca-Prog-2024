@@ -34,7 +34,7 @@
             <label for="DevPrevista">Devolução:</label>
             <input type="date" id="DevPrevista" name="DevPrevista">
 
-            <input type="submit" value="Adicionar" name="Adicionar">
+            <input type="submit" value="Adicionar" name="Adicionar" class="enviar">
         </form>
     </div>
 

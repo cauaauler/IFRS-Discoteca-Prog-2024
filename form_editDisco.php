@@ -53,7 +53,7 @@
             <br>
             <input type='file' name='arquivo' id='v1' accept='image/*'>
 
-            <input type="submit" value="editar" name="botao">
+            <input type="submit" value="editar" name="botao" class="enviar">
 
         </form>
     </div>
