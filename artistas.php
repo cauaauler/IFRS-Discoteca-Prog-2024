@@ -13,8 +13,7 @@
     <nav>
         <ul class="navbar">
             <li><a href="index.php">Página Inicial</a></li>
-            <li style="float:right; color: white;">
-            </li>
+            <li><a href="form_addArtista.php">Adicionar Artista</a></li>
         </ul>
     </nav>
 
@@ -47,4 +46,3 @@ if ($resultado->num_rows == 0) {
 }
 
 echo "</table>";
-echo "<a href='form_addArtista.php'>adicionar artista</a>";
