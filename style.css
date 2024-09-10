@@ -62,7 +62,7 @@ h1{
 }
 
 /* Links dentro dos cards */
-.card a {
+.card a, input[type="submit"] {
 	width: 100px;
 	display: block;
 	margin-top: 10px;
@@ -74,7 +74,6 @@ h1{
 	transition: background-color 0.2s ease-in-out;
 	background-color: #4e52be;
 }
-
 .card a:hover {
 	background-color: #5d62e7;
 	text-decoration: underline;
