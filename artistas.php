@@ -13,9 +13,18 @@
     <nav>
         <ul class="navbar">
             <li><a href="index.php">Página Inicial</a></li>
-            <li><a href="form_addArtista.php">Adicionar Artista</a></li>
         </ul>
     </nav>
+
+    <div class="addArtista">
+        <form action="addArtista.php" method="post">
+            <label for="Nome">Nome:</label>
+            <input type="text" id="Nome" name='Nome' required>
+            <br>
+            <input type="submit" value="adicionar" name="botao">
+        </form>
+    </div>
+    
 
 </body>
 
@@ -26,11 +35,10 @@ $db = new mysqli("localhost", "root", "", "discoteca");
 $query =  "select * from artista";
 $resultado = $db->query($query);
 
-echo "<table border border-Style:dashed>";
+echo "<table border='1'>";
 echo "<tr> 
             <td>Nome</td>
-            <td>fazer</td>
-            <td>fazer</td>
+            <td>Ações</td>
         </tr>";
 
 if ($resultado->num_rows == 0) {
@@ -39,8 +47,8 @@ if ($resultado->num_rows == 0) {
     foreach ($resultado as $linha) {
         echo "<tr>";
         echo "<td> {$linha['Nome']}</td>";
-        echo "<td> <a href='delArtista.php?IdArtista={$linha['IdArtista']}'>Eliminar</a> </td>";
-        echo "<td><a href='form_editArtista.php?idArtista={$linha['IdArtista']}'>Editar</a></td>";
+        echo "<td> <a href='delArtista.php?IdArtista={$linha['IdArtista']}'>Eliminar</a> 
+                   <a href='form_editArtista.php?idArtista={$linha['IdArtista']}'>Editar</a></td>";
         echo "</tr>";
     }
 }

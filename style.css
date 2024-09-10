@@ -160,10 +160,33 @@ body{
     }
 }
 
+.addArtista{
+    
+}
+
 table {
     border-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+table a{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    padding: 2px 5px;
+    border-radius: 2px;
+    transition: background-color 0.2s ease-in-out;
+    background-color: #5d61e2;
+}
+
+table a:hover {
+    background-color: #5d62e7;
+    text-decoration: underline;
 }
