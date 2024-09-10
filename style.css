@@ -145,3 +145,11 @@ body{
         flex-basis: 100%;
     }
 }
+
+table {
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
