@@ -24,7 +24,7 @@
         <label for="Nome">Nome:</label>
         <?php
         $db = new mysqli("localhost", "root", "", "discoteca");
-        $idArtista = $_GET['idArtista'];
+        $idArtista = $_GET['IdArtista'];
         $query = "SELECT Nome FROM Artista WHERE IdArtista = '$idArtista'";
         $resultado = $db->query($query);
         $artista = $resultado->fetch_assoc();
