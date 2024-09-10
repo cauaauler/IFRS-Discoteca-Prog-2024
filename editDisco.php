@@ -5,10 +5,8 @@ $anoAtual = date('Y');
 if (isset($_FILES["arquivo"])) {
     if ($_POST['Ano'] > $anoAtual || $_POST['Ano'] < 1850) {
         header('Location: error.php?erro=ano');
-
     } else if (strlen($_POST['Titulo']) > 50) {
         header('Location: error.php?erro=titulo');
-
     } else {
 
         $imageFileType = strtolower(pathinfo($_FILES["arquivo"]["name"], PATHINFO_EXTENSION));
@@ -22,7 +20,7 @@ if (isset($_FILES["arquivo"])) {
             $resultado = $db->query($query);
             header('Location: index.php');
             exit();
-        } else if ($_FILES["arquivo"]["error"] === 0 && in_array ($imageFileType,$extensoesPermitidas)) {
+        } else if ($_FILES["arquivo"]["error"] === 0 && in_array($imageFileType, $extensoesPermitidas)) {
 
             //Se algum arquivo for enviado
             $idDisco = $db->insert_id;
@@ -41,7 +39,7 @@ if (isset($_FILES["arquivo"])) {
             } else {
                 header('Location: error.php?erro=3');
             }
-        }else{
+        } else {
             header('Location: error.php?erro=4');
         }
     }

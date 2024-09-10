@@ -35,31 +35,29 @@ $resultado = $db->query($query);
             </form>
         </div>
 
-        <div class="list">
-            <?php
-            echo "<table class='table'>";
-            echo "<thead><tr> 
+        <?php
+        echo "<table class='table'>";
+        echo "<thead><tr> 
             <th>Nome</th>
             <th>Ações</th>
             </tr></thead><tbody>";
 
-            if ($resultado->num_rows == 0) {
-                echo "<tr><td colspan='2'>Não tem artistas cadastrados</td></tr>";
-            } else {
-                foreach ($resultado as $linha) {
-                    echo "<tr>";
-                    echo "<td> {$linha['Nome']}</td>";
-                    echo "<td> 
+        if ($resultado->num_rows == 0) {
+            echo "<tr><td colspan='2'>Não tem artistas cadastrados</td></tr>";
+        } else {
+            foreach ($resultado as $linha) {
+                echo "<tr>";
+                echo "<td> {$linha['Nome']}</td>";
+                echo "<td> 
                             <a href='delArtista.php?IdArtista={$linha['IdArtista']}'>Eliminar</a> 
                             <a href='form_editArtista.php?IdArtista={$linha['IdArtista']}'>Editar</a>
                         </td>";
-                    echo "</tr>";
-                }
+                echo "</tr>";
             }
+        }
 
-            echo "</tbody></table>";
-            ?>
-        </div>
+        echo "</tbody></table>";
+        ?>
     </div>
 </body>
 
