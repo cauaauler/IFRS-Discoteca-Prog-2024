@@ -28,7 +28,7 @@
         </ul>
     </nav>
 
-    <h1>Histórico de Emprestimos</h1>
+    <h1>Histórico de Empréstimos</h1>
 
 </body>
 

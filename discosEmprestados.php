@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empréstimos</title>
+    <title>Empréstimos Ativos</title>
     <link rel="stylesheet" href="style.css">
 
 
@@ -28,7 +28,7 @@
         </ul>
     </nav>
 
-    <h1>Emprestimos Ativos</h1>
+    <h1>Empréstimos Ativos</h1>
 
 </body>
 
