@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;700&family=Poppins:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;700&family=Poppins:wght@400;700&display=swap");
 
 /* Estilo global */
 * {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	font-family: "Montserrat", sans-serif;
 }
 
 body {
-    margin: 0;
-    background-color: #AEB8FE;
+	margin: 0;
+	background-color: #aeb8fe;
 }
 
 h1{
@@ -21,30 +21,30 @@ h1{
 
 /* Container flexível para os cards */
 .card-container {
-    display: flex;
-    gap: 50px;
-    padding: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+	display: flex;
+	gap: 50px;
+	padding: 20px;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 /* Estilo de cada card individual */
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid #4E52BE;
-    border-radius: 10px;
-    padding: 30px;
-    flex-basis: 300px;
-    flex-shrink: 0;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #bfc6ff;
-    transition: transform 0.3s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 2px solid #4e52be;
+	border-radius: 10px;
+	padding: 30px;
+	flex-basis: 300px;
+	flex-shrink: 0;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: #bfc6ff;
+	transition: transform 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 .card h1{
@@ -56,235 +56,250 @@ h1{
 
 /* Estilo da imagem dentro do card */
 .card img {
-    max-width: 80%;
-    object-fit: cover;
-    margin-bottom: 10px;
+	max-width: 80%;
+	object-fit: cover;
+	margin-bottom: 10px;
 }
 
 /* Links dentro dos cards */
 .card a {
-    width: 100px;
-    display: block;
-    margin-top: 10px;
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    font-weight: bold;
-    border-radius: 10px;
-    transition: background-color 0.2s ease-in-out;
-    background-color: #4E52BE;
+	width: 100px;
+	display: block;
+	margin-top: 10px;
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+	font-weight: bold;
+	border-radius: 10px;
+	transition: background-color 0.2s ease-in-out;
+	background-color: #4e52be;
 }
 
 .card a:hover {
-    background-color: #5d62e7;
-    text-decoration: underline;
+	background-color: #5d62e7;
+	text-decoration: underline;
 }
 
 /* Estilo para a barra de navegação */
 .navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #4E52BE;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #4e52be;
 }
 
 .navbar li {
-    float: left;
-    padding: 0 10px;
+	float: left;
+	padding: 0 10px;
 }
 
 .navbar li a {
-    display: block;
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
+	display: block;
+	color: white;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
 .navbar li a:hover {
-    background-color: #311e9c;
+	background-color: #311e9c;
 }
 
 /* Estilo do formulário de ordenação dentro da navbar */
 .navbar form {
-    display: inline-block;
-    padding: 14px 20px;
+	display: inline-block;
+	padding: 14px 20px;
 }
 
 .navbar select {
-    background-color: #311e9c;
-    color: white;
-    border: 1px solid #4028c9;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
+	background-color: #311e9c;
+	color: white;
+	border: 1px solid #4028c9;
+	font-size: 16px;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
 .navbar select:hover {
-    background-color: #4028c9;
+	background-color: #4028c9;
 }
 
 /* Responsividade para os cards */
 @media screen and (max-width: 600px) {
-    .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
+	.card-container {
+		flex-direction: column;
+		align-items: center;
+	}
 
-    .card {
-        flex-basis: 100%;
-        max-width: 90%;
-    }
+	.card {
+		flex-basis: 100%;
+		max-width: 90%;
+	}
 }
 
 /* Ajustes de responsividade para a navbar */
 @media screen and (max-width: 600px) {
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+	.navbar {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
-    .navbar li {
-        float: none;
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
+	.navbar li {
+		float: none;
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
 
-    .navbar form {
-        display: block;
-        margin-top: 10px;
-        width: 100%;
-        text-align: center;
-    }
+	.navbar form {
+		display: block;
+		margin-top: 10px;
+		width: 100%;
+		text-align: center;
+	}
 
-    .navbar select {
-        width: 80%;
-    }
+	.navbar select {
+		width: 80%;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding: 20px;
 }
 
 /* Estilo para a seção de artistas */
 .artista {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding: 20px;
 }
 
-.addArtista, .list {
-    width: 100%;
-    max-width: 800px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+.addArtista,
+.list {
+	width: 100%;
+	max-width: 800px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	background-color: #f9f9f9;
+	border-radius: 8px;
 }
 
 /* Estilo da tabela */
 table {
-    width: 100%;
-    max-width: 800px;
-    border-collapse: collapse;
-    margin-top: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 800px;
+	border-collapse: collapse;
+	margin-top: 30px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+table,
+th,
+td {
+	border: 1px solid #ddd;
 }
 
-th, td {
-    padding: 12px;
-    text-align: center;
+th,
+td {
+	padding: 12px;
+	text-align: center;
 }
 
 th {
-    background-color: #4E52BE;
-    color: white;
+	background-color: #4e52be;
+	color: white;
 }
 
 td {
-    background-color: #f9f9f9;
+	background-color: #f9f9f9;
 }
 
 /* Links dentro da tabela */
 table a {
-    width: 100px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    margin: 5px 0;
-    padding: 2px 5px;
-    border-radius: 2px;
-    background-color: #5d61e2;
-    transition: background-color 0.2s ease-in-out;
+	width: 100px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	text-decoration: none;
+	margin: 5px 0;
+	padding: 2px 5px;
+	border-radius: 2px;
+	background-color: #5d61e2;
+	transition: background-color 0.2s ease-in-out;
 }
 
 table a:hover {
-    background-color: #3d42d1;
+	background-color: #3d42d1;
 }
 
 /* Estilo do formulário */
 .addForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 500px;
 }
 
 .addForm label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 8px;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 8px;
 }
 
 .addForm input[type="text"] {
-    width: 100%;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+	width: 100%;
+	padding: 10px 0;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 
 .addForm input[type="submit"] {
-    background-color: #4E52BE;
-    color: white;
-    font-weight: bold;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+	background-color: #4e52be;
+	color: white;
+	font-weight: bold;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 .addForm input[type="submit"]:hover {
     background-color: #5d62e7;
 
+	background-color: #5d62e7;
 }
 
 .formulario {
-    display: inline-flex;
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+	display: inline-flex;
+	text-align: center;
+    justify-content: center;
+	width: 100%;
+	max-width: 800px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	background-color: #f9f9f9;
+	border-radius: 8px;
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
-text-align: center;
+.form {
+	display: flex;
+	flex-direction: column;
+    gap: 5px;
+	text-align: center;
 }

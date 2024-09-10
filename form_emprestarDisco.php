@@ -18,24 +18,25 @@
     </nav>
 
     <h1>Emprestar Disco</h1>
+    <div class="formulario">
 
-    <form action="emprestarDisco.php" method="post">
+        <form action="emprestarDisco.php" method="post" class="form">
 
-        <!-- Para conseguir enviar o id para o emprestar -->
-        <input type="hidden" id="IdDisco" name="IdDisco" value="<?php echo htmlspecialchars($_GET['idDisco'] ?? ''); ?>">
+            <!-- Para conseguir enviar o id para o emprestar -->
+            <input type="hidden" id="IdDisco" name="IdDisco" value="<?php echo htmlspecialchars($_GET['idDisco'] ?? ''); ?>">
 
-        <label for="Nome">Nome do cliente:</label>
-        <input type="text" id="Nome" name="Nome" required>
+            <label for="Nome">Nome do cliente:</label>
+            <input type="text" id="Nome" name="Nome" required>
 
-        <label for="Email">Email do cliente:</label>
-        <input type="email" id="Email" name="Email" required>
+            <label for="Email">Email do cliente:</label>
+            <input type="email" id="Email" name="Email" required>
 
-        <label for="DevPrevista">Devolução:</label>
-        <input type="date" id="DevPrevista" name="DevPrevista">
+            <label for="DevPrevista">Devolução:</label>
+            <input type="date" id="DevPrevista" name="DevPrevista">
 
-        <input type="submit" value="Adicionar" name="Adicionar">
-    </form>
-
+            <input type="submit" value="Adicionar" name="Adicionar">
+        </form>
+    </div>
 
 </body>
 

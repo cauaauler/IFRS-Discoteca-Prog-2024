@@ -19,23 +19,24 @@
     </nav>
 
     <h1>Editar Artista</h1>
+    <div class="formulario">
+        <form action="editArtista.php" method="post" class="form">
+            <label for="Nome">Nome:</label>
+            <?php
+            $db = new mysqli("localhost", "root", "", "discoteca");
+            $idArtista = $_GET['IdArtista'];
+            $query = "SELECT Nome FROM Artista WHERE IdArtista = '$idArtista'";
+            $resultado = $db->query($query);
+            $artista = $resultado->fetch_assoc();
+            echo "<input type='text' id='Nome' name='Nome' required value={$artista['Nome']}>";
+            echo "<input type='text' id='IdArtista' name='IdArtista' required value={$idArtista} hidden>";
+            ?>
+            <br>
 
-    <form action="editArtista.php" method="post">
-        <label for="Nome">Nome:</label>
-        <?php
-        $db = new mysqli("localhost", "root", "", "discoteca");
-        $idArtista = $_GET['IdArtista'];
-        $query = "SELECT Nome FROM Artista WHERE IdArtista = '$idArtista'";
-        $resultado = $db->query($query);
-        $artista = $resultado->fetch_assoc();
-        echo "<input type='text' id='Nome' name='Nome' required value={$artista['Nome']}>";
-        echo "<input type='text' id='IdArtista' name='IdArtista' required value={$idArtista} hidden>";
-        ?>
-        <br>
+            <input type="submit" value="editar" name="botao">
 
-        <input type="submit" value="editar" name="botao">
-
-    </form>
+        </form>
+    </div>
 </body>
 
 </html>

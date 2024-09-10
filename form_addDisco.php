@@ -18,42 +18,43 @@
     </nav>
 
     <h1>Adicionar Disco</h1>
+    <div class="formulario">
+        <form action="addDisco.php" method="post" enctype="multipart/form-data" class="form">
+            <label for="Titulo">Título:</label>
+            <input type="text" id="Titulo" name="Titulo" required>
 
-    <form action="addDisco.php" method="post" enctype="multipart/form-data">
-        <label for="Titulo">Título:</label>
-        <input type="text" id="Titulo" name="Titulo" required>
+            <label for="Ano">Ano:</label>
+            <input type="number" id="Ano" name="Ano" required>
 
-        <label for="Ano">Ano:</label>
-        <input type="number" id="Ano" name="Ano" required>
-
-        <label for="Artista">Artista:</label>
-        <select name="Artista" id="Artista" required>
-            <?php
-            $db = new mysqli("localhost", "root", "", "discoteca");
-            if ($db->connect_error) {
-                die("Conexão falhou: " . $db->connect_error);
-            }
-
-            $query = "SELECT Nome, idArtista FROM artista";
-            $nomes = $db->query($query);
-
-            if ($nomes->num_rows > 0) {
-                while ($artista = $nomes->fetch_assoc()) {
-                    echo "<option value='{$artista['idArtista']}'>{$artista['Nome']}</option>";
+            <label for="Artista">Artista:</label>
+            <select name="Artista" id="Artista" required>
+                <?php
+                $db = new mysqli("localhost", "root", "", "discoteca");
+                if ($db->connect_error) {
+                    die("Conexão falhou: " . $db->connect_error);
                 }
-            } else {
-                echo "<option value=\"\">Nenhum artista encontrado</option>";
-            }
 
-            $db->close();
-            ?>
-        </select>
+                $query = "SELECT Nome, idArtista FROM artista";
+                $nomes = $db->query($query);
 
-        <label for="v1">Selecione o arquivo:</label>
-        <input type="file" name="arquivo" id="v1" accept="image/*" required>
-        <div id="imagePreview"></div>
-        <input type="submit" value="Adicionar" name="Adicionar">
-    </form>
+                if ($nomes->num_rows > 0) {
+                    while ($artista = $nomes->fetch_assoc()) {
+                        echo "<option value='{$artista['idArtista']}'>{$artista['Nome']}</option>";
+                    }
+                } else {
+                    echo "<option value=\"\">Nenhum artista encontrado</option>";
+                }
+
+                $db->close();
+                ?>
+            </select>
+
+            <label for="v1">Selecione o arquivo:</label>
+            <input type="file" name="arquivo" id="v1" accept="image/*" required>
+            <div id="imagePreview"></div>
+            <input type="submit" value="Adicionar" name="Adicionar">
+        </form>
+    </div>
     <script>
         // Adiciona um evento 'change' ao elemento de input com id 'v1'
         document.getElementById('v1').addEventListener('change', function(event) {
