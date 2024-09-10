@@ -1,3 +1,9 @@
+<?php
+$db = new mysqli("localhost", "root", "", "discoteca");
+$query =  "select * from artista";
+$resultado = $db->query($query);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,41 +22,39 @@
         </ul>
     </nav>
 
-    <div class="addArtista">
-        <form action="addArtista.php" method="post">
-            <label for="Nome">Nome:</label>
-            <input type="text" id="Nome" name='Nome' required>
-            <br>
-            <input type="submit" value="adicionar" name="botao">
-        </form>
-    </div>
-    
+    <div class="artista">
+        <div class="addArtista">
+            <form action="addArtista.php" method="post">
+                <label for="Nome">Nome:</label>
+                <input type="text" id="Nome" name='Nome' required>
+                <br>
+                <input type="submit" value="adicionar" name="botao">
+            </form>
+        </div>
 
-</body>
-
-</html>
-
-<?php
-$db = new mysqli("localhost", "root", "", "discoteca");
-$query =  "select * from artista";
-$resultado = $db->query($query);
-
-echo "<table border='1'>";
-echo "<tr> 
+        <div class="listArtista">
+            <?php
+            echo "<table border='1'>";
+            echo "<tr> 
             <td>Nome</td>
             <td>Ações</td>
-        </tr>";
+                </tr>";
 
-if ($resultado->num_rows == 0) {
-    echo "não tem artistas cadastrados";
-} else {
-    foreach ($resultado as $linha) {
-        echo "<tr>";
-        echo "<td> {$linha['Nome']}</td>";
-        echo "<td> <a href='delArtista.php?IdArtista={$linha['IdArtista']}'>Eliminar</a> 
+            if ($resultado->num_rows == 0) {
+                echo "não tem artistas cadastrados";
+            } else {
+                foreach ($resultado as $linha) {
+                    echo "<tr>";
+                    echo "<td> {$linha['Nome']}</td>";
+                    echo "<td> <a href='delArtista.php?IdArtista={$linha['IdArtista']}'>Eliminar</a> 
                    <a href='form_editArtista.php?idArtista={$linha['IdArtista']}'>Editar</a></td>";
-        echo "</tr>";
-    }
-}
+                    echo "</tr>";
+                }
+            }
 
-echo "</table>";
+            echo "</table>";
+            ?>
+        </div>
+    </div>
+</body>
+</html>
