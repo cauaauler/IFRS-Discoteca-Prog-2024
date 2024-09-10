@@ -50,7 +50,7 @@ $query = "SELECT * FROM emprestimo e
 JOIN disco d ON d.IdDisco = e.IdDisco
 ORDER BY $ordenar ASC";
 $resultado = $db->query($query);
-
+echo "<div class='artista'>";
 echo "<table border='1'>";
 echo "<tr>
         <td>Título</td>
@@ -78,6 +78,7 @@ if ($resultado->num_rows == 0) {
 }
 
 echo "</table>";
+echo "</div>";
 echo "<br>";
 
 $db->close();
