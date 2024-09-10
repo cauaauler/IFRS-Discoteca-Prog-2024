@@ -16,6 +16,9 @@
             </li>
         </ul>
     </nav>
+
+    <h1>Adicionar Disco</h1>
+
     <form action="addDisco.php" method="post" enctype="multipart/form-data">
         <label for="Titulo">Título:</label>
         <input type="text" id="Titulo" name="Titulo" required>

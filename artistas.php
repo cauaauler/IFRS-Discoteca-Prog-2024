@@ -21,6 +21,8 @@ $resultado = $db->query($query);
         </ul>
     </nav>
 
+    <h1>Artistas</h1>
+
     <div class="artista">
         <div class="addForm">
             <form action="addArtista.php" method="post">

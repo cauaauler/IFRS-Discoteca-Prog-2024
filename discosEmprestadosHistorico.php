@@ -28,6 +28,8 @@
         </ul>
     </nav>
 
+    <h1>Histórico de Emprestimos</h1>
+
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>editar disco</title>
+    <title>Editar Disco</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -17,6 +17,9 @@
             </li>
         </ul>
     </nav>
+
+    <h1>Editar Disco</h1>
+
     <form action="editdisco.php" method="post" enctype="multipart/form-data">
         <label for="Nome">Nome:</label>
         <?php

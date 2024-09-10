@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Disco</title>
+    <title>Emprestar Disco</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,6 +16,9 @@
             </li>
         </ul>
     </nav>
+
+    <h1>Emprestar Disco</h1>
+
     <form action="emprestarDisco.php" method="post">
 
         <!-- Para conseguir enviar o id para o emprestar -->

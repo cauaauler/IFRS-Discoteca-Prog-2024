@@ -9,30 +9,27 @@
 </head>
 
 <body>
-
-    <body>
-        <!-- Nav bar -->
-        <nav>
-            <ul class="navbar">
-                <li><a href="form_addDisco.php">Adicionar Disco</a></li>
-                <li><a href="discosEmprestados.php">Discos Emprestados</a></li>
-                <li><a href='artistas.php'>Ver Artistas</a></li>
-                <li style="float:right; color: white;">
-                    <form method="GET" action="">
-                        <label for="ordenar">Ordenar por:</label>
-                        <select name="ordenar" id="ordenar" onchange="this.form.submit()">
-                            <option value="Titulo" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Titulo' ? 'selected' : '' ?>>Título</option>
-                            <option value="Nome" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Nome' ? 'selected' : '' ?>>Artista</option>
-                            <option value="Ano" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Ano' ? 'selected' : '' ?>>Ano</option>
-                        </select>
-                    </form>
-                </li>
-            </ul>
-        </nav>
-
-
-        <br>
-    </body>
+    <!-- Nav bar -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="form_addDisco.php">Adicionar Disco</a></li>
+            <li><a href="discosEmprestados.php">Discos Emprestados</a></li>
+            <li><a href='artistas.php'>Ver Artistas</a></li>
+            <li style="float:right; color: white;">
+                <form method="GET" action="">
+                    <label for="ordenar">Ordenar por:</label>
+                    <select name="ordenar" id="ordenar" onchange="this.form.submit()">
+                        <option value="Titulo" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Titulo' ? 'selected' : '' ?>>Título</option>
+                        <option value="Nome" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Nome' ? 'selected' : '' ?>>Artista</option>
+                        <option value="Ano" <?= isset($_GET['ordenar']) && $_GET['ordenar'] == 'Ano' ? 'selected' : '' ?>>Ano</option>
+                    </select>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <h1>Discoteca</h1>
+</body>
 
 </html>
 
@@ -56,7 +53,7 @@ ORDER BY $ordenar ASC";
 $resultado = $db->query($query);
 
 if ($resultado->num_rows == 0) {
-    echo "<h1>Não há discos cadastrados</h1>";
+    echo "<h2>Não há discos cadastrados</h2>";
 } else {
     echo "<div class='card-container'>";
     while ($linha = $resultado->fetch_assoc()) {
