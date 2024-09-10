@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
+/* Estilo global */
 * {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
-body{
-    margin: 0px;
+
+body {
+    margin: 0;
     background-color: #AEB8FE;
 }
 
 /* Container flexível para os cards */
 .card-container {
-    display: flex;    
-    /* gap é maravilhoso, é literalmente um gap, não é que nem o margin que soma */
+    display: flex;
     gap: 50px;
     padding: 20px;
     justify-content: center;
@@ -27,24 +28,21 @@ body{
     border: 2px solid #4E52BE;
     border-radius: 10px;
     padding: 30px;
-    flex-basis: 300px; /* Define a largura inicial do card */
-    flex-shrink: 0; /* Evita que o card encolha */
+    flex-basis: 300px;
+    flex-shrink: 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
     background-color: #bfc6ff;
     transition: transform 0.3s;
 }
 
-/* muito daora */
 .card:hover {
     transform: scale(1.05);
 }
 
 /* Estilo da imagem dentro do card */
 .card img {
-    max-width: 80%; /* Largura fixa para todas as imagens */
-    min-width: 80%; /* Altura fixa */
-    object-fit: cover; /* Garante que a imagem ocupe o espaço sem distorção */
+    max-width: 80%;
+    object-fit: cover;
     margin-bottom: 10px;
 }
 
@@ -52,10 +50,9 @@ body{
 .card a {
     width: 100px;
     display: block;
-    margin-top: 5px;
+    margin-top: 10px;
     color: white;
     text-decoration: none;
-    margin: 10px 0;
     padding: 5px 10px;
     font-weight: bold;
     border-radius: 10px;
@@ -68,58 +65,50 @@ body{
     text-decoration: underline;
 }
 
-.card p {
-    margin: 6px;
-}
-
 /* Estilo para a barra de navegação */
 .navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;   
-    background-color: #4E52BE; 
+    overflow: hidden;
+    background-color: #4E52BE;
 }
 
 .navbar li {
     float: left;
-    padding: 0 10px 0 10px;
+    padding: 0 10px;
 }
 
 .navbar li a {
     display: block;
     color: white;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 .navbar li a:hover {
-    background-color: #311e9c; /* Cor de fundo quando passar o mouse */
+    background-color: #311e9c;
 }
 
 /* Estilo do formulário de ordenação dentro da navbar */
 .navbar form {
     display: inline-block;
-    margin: 0;
     padding: 14px 20px;
 }
 
-/* Estilo do select para ordenação */
 .navbar select {
     background-color: #311e9c;
     color: white;
     border: 1px solid #4028c9;
     font-size: 16px;
     border-radius: 4px;
-    outline: none;
     cursor: pointer;
 }
 
-/* Efeito de hover no select */
 .navbar select:hover {
     background-color: #4028c9;
 }
+
 /* Responsividade para os cards */
 @media screen and (max-width: 600px) {
     .card-container {
@@ -129,7 +118,7 @@ body{
 
     .card {
         flex-basis: 100%;
-        max-width: 90%; /* Garantir que o card não ultrapasse a largura da tela */
+        max-width: 90%;
     }
 }
 
@@ -156,36 +145,64 @@ body{
     }
 
     .navbar select {
-        width: 80%; /* Melhorar a usabilidade no celular */
+        width: 80%;
     }
 }
 
-.artista{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* Estilo para a seção de artistas */
+.artista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
     padding: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
-.addArtista{
-    display: flex;
+.addArtista, .list {
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
 }
 
-.listArtista{
-
-}
-
-table {
-    border-style: none;
+.addArtista {
+    background-color: #d9e4f5;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
-table a{
+/* Estilo da tabela */
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #4E52BE;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Links dentro da tabela */
+table a {
     width: 100px;
     display: flex;
     justify-content: center;
@@ -195,11 +212,50 @@ table a{
     margin: 5px 0;
     padding: 2px 5px;
     border-radius: 2px;
-    transition: background-color 0.2s ease-in-out;
     background-color: #5d61e2;
+    transition: background-color 0.2s ease-in-out;
 }
 
 table a:hover {
+    background-color: #3d42d1;
+}
+
+/* Estilo do formulário */
+form {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #4E52BE;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
     background-color: #5d62e7;
-    text-decoration: underline;
 }
