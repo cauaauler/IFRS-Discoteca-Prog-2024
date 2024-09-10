@@ -12,8 +12,6 @@
     <nav>
         <ul class="navbar">
             <li><a href="index.php">Página Inicial</a></li>
-            <li style="float:right; color: white;">
-            </li>
         </ul>
     </nav>
     <form action="addArtista.php" method="post">

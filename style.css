@@ -12,6 +12,7 @@ body{
 /* Container flexível para os cards */
 .card-container {
     display: flex;    
+    /* gap é maravilhoso, é literalmente um gap, não é que nem o margin que soma */
     gap: 50px;
     padding: 20px;
     justify-content: center;
@@ -41,8 +42,8 @@ body{
 
 /* Estilo da imagem dentro do card */
 .card img {
-    max-width: 80%;
-    min-width: 80%;
+    max-width: 80%; /* Largura fixa para todas as imagens */
+    min-width: 80%; /* Altura fixa */
     object-fit: cover; /* Garante que a imagem ocupe o espaço sem distorção */
     margin-bottom: 10px;
 }
@@ -52,7 +53,7 @@ body{
     width: 100px;
     display: block;
     margin-top: 5px;
-    color: white;
+    color: #94b4ff;
     text-decoration: none;
     margin: 10px 0;
     padding: 5px 10px;
@@ -119,21 +120,6 @@ body{
 .navbar select:hover {
     background-color: #4028c9;
 }
-
-/* Responsividade para a navbar */
-@media screen and (max-width: 600px) {
-    .navbar li {
-        float: none;
-        display: block;
-        text-align: center;
-    }
-
-    .navbar form {
-        display: block;
-        margin-top: 10px;
-    }
-}
-
 /* Responsividade para os cards */
 @media screen and (max-width: 600px) {
     .card-container {
@@ -143,6 +129,34 @@ body{
 
     .card {
         flex-basis: 100%;
+        max-width: 90%; /* Garantir que o card não ultrapasse a largura da tela */
+    }
+}
+
+/* Ajustes de responsividade para a navbar */
+@media screen and (max-width: 600px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar form {
+        display: block;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar select {
+        width: 80%; /* Melhorar a usabilidade no celular */
     }
 }
 
