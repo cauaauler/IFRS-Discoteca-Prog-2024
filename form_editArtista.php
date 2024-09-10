@@ -33,7 +33,7 @@
             ?>
             <br>
 
-            <input type="submit" value="editar" name="botao" class="enviar">
+            <input type="submit" value="Editar" name="botao" class="enviar">
 
         </form>
     </div>

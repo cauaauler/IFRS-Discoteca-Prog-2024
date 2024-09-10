@@ -88,6 +88,10 @@ h1 {
 	background-color: #4e52be;
 }
 
+.enviar:hover{
+	background-color: #5d62e7;
+}
+
 .card a:hover {
 	background-color: #5d62e7;
 	text-decoration: underline;
