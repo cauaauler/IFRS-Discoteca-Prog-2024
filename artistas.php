@@ -12,6 +12,7 @@ $resultado = $db->query($query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artistas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="http://localhost/Discoteca-Prog-2024/site/certificado_ouro.png?v=2" type="image/png">
 </head>
 
 <body>
