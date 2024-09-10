@@ -149,6 +149,14 @@ body {
     }
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
 /* Estilo para a seção de artistas */
 .artista {
     display: flex;
@@ -165,13 +173,6 @@ body {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
-}
-
-.addArtista {
-    background-color: #d9e4f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Estilo da tabela */
@@ -204,7 +205,7 @@ td {
 /* Links dentro da tabela */
 table a {
     width: 100px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     color: white;
@@ -221,7 +222,10 @@ table a:hover {
 }
 
 /* Estilo do formulário */
-form {
+.addForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     padding: 20px;
     border: 1px solid #ccc;
@@ -231,13 +235,13 @@ form {
     max-width: 500px;
 }
 
-form label {
+.addForm label {
     font-weight: bold;
     display: block;
     margin-bottom: 8px;
 }
 
-form input[type="text"] {
+.addForm input[type="text"] {
     width: 100%;
     padding: 10px 0;
     margin-bottom: 20px;
@@ -245,7 +249,7 @@ form input[type="text"] {
     border-radius: 5px;
 }
 
-form input[type="submit"] {
+.addForm input[type="submit"] {
     background-color: #4E52BE;
     color: white;
     font-weight: bold;
@@ -256,6 +260,6 @@ form input[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-form input[type="submit"]:hover {
+.addForm input[type="submit"]:hover {
     background-color: #5d62e7;
 }
