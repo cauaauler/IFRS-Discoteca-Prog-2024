@@ -269,4 +269,22 @@ table a:hover {
 
 .addForm input[type="submit"]:hover {
     background-color: #5d62e7;
+
+}
+
+.formulario {
+    display: inline-flex;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+text-align: center;
 }
