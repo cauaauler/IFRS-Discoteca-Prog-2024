@@ -24,7 +24,7 @@ $resultado = $db->query($query);
 
     <div class="artista">
         <div class="formAddArtista">
-            <form action="formAddArtista.php" method="post">
+            <form action="addArtista.php" method="post">
                 <label for="Nome">Nome:</label>
                 <input type="text" id="Nome" name='Nome' required>
                 <br>

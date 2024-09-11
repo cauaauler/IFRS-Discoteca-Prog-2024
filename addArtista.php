@@ -5,5 +5,5 @@ if (strlen($_POST['Nome']) > 30 || strlen($_POST['Nome']) == 0) {
 } else {
     $query = "insert INTO artista (Nome) VALUES ('$_POST[Nome]')";
     $resultado = $db->query($query);
-    header('location:artistformAddArtista');
+    header('location:artistas.php');
 }

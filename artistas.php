@@ -49,7 +49,7 @@ $resultado = $db->query($query);
                 echo "<tr>";
                 echo "<td> {$linha['Nome']}</td>";
                 echo "<td> 
-                            <a href='delArtista.php?IdArtista={$linha['IdArtista']}'>Eliminar</a> 
+                            <a href='delArtista.php?IdArtista={$linha['IdArtista']}'>Excluir</a> 
                             <a href='form_editArtista.php?IdArtista={$linha['IdArtista']}'>Editar</a>
                         </td>";
                 echo "</tr>";

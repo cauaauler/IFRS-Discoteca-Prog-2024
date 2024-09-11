@@ -47,12 +47,12 @@ echo "<div class='artista'>";
 
 echo "<table border='1'>";
 echo "<tr>
-        <td>Título</td>
-        <td>Foto Capa</td>
-        <td>Nome do Cliente</td>
-        <td>Email</td>
-        <td>Data do Empréstimo</td>
-        <td>Data da Devolução Prevista</td>
+        <th>Título</th>
+        <th>Foto Capa</th>
+        <th>Nome do Cliente</th>
+        <th>Email</th>
+        <th>Data do Empréstimo</th>
+        <th>Data da Devolução Prevista</th>
     </tr>";
 
 if ($resultado->num_rows == 0) {

@@ -18,14 +18,32 @@ if (isset($_GET['IdArtista'])) {
     ";
     $db->query($query);
 
-    // Excluir registros da tabela emprestimo que referenciam discos do artista
+    // Verificar se o artista tem emprestimos
     $query = "
-        DELETE e
+        SELECT d.IdArtista
         FROM emprestimo e
         JOIN disco d ON e.IdDisco = d.IdDisco
-        WHERE d.IdArtista = {$idArtista}
+        WHERE d.IdArtista = {$idArtista} AND 
+        Devolvido = 0;
     ";
-    $db->query($query);
+    $resultado = $db->query($query);
+
+    if ($resultado->num_rows == 0) {
+        // Excluir registros da tabela emprestimo que referenciam discos do artista
+        $query = "
+            DELETE e
+            FROM emprestimo e
+            JOIN disco d ON e.IdDisco = d.IdDisco
+            WHERE d.IdArtista = {$idArtista}
+        ";
+        $db->query($query);
+    } else {
+        header('Location: error.php?erro=existeEmprestimo');
+        exit;
+    }
+
+
+
 
     // Excluir os discos do artista
     $query = "

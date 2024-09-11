@@ -15,6 +15,11 @@
         $erro = $_GET['erro'];
 
         switch ($erro) {
+            case 'existeEmprestimo':
+                echo "<h1>Artista tem discos emprestados, não é possível excluir</h1>";
+                echo "</br>";
+                echo "<a href='index.php' class='enviar'>Voltar</a>";
+                break;
             case 'ano':
                 echo "<h1>Adicione um ano válido para o disco</h1>";
                 echo "</br>";
