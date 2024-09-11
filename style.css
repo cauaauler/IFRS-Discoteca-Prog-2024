@@ -125,7 +125,7 @@ h1 {
 /* Estilo do formulário de ordenação dentro da navbar */
 .navbar form {
 	display: inline-block;
-	padding: 14px 20px;
+	padding: 12px 14px;
 }
 
 .navbar select {
@@ -276,6 +276,13 @@ table a:hover {
 	display: block;
 	margin-bottom: 8px;
 }
+input[type="text"],input[type="number"], .formulario select {
+	width: 100%;
+	padding: 10px 0;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
 
 .addForm input[type="text"] {
 	width: 100%;
@@ -284,6 +291,7 @@ table a:hover {
 	border: 1px solid #ccc;
 	border-radius: 5px;
 }
+
 
 .addForm input[type="submit"] {
 	background-color: #4e52be;
