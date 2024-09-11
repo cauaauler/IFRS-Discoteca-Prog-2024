@@ -36,8 +36,6 @@ CREATE TABLE `artista` (
 -- Despejando dados para a tabela `artista`
 --
 
-INSERT INTO `artista` (`Nome`, `IdArtista`) VALUES
-('xama', 5);
 
 -- --------------------------------------------------------
 
@@ -55,9 +53,6 @@ CREATE TABLE `devolucao` (
 -- Despejando dados para a tabela `devolucao`
 --
 
-INSERT INTO `devolucao` (`Data`, `IdDev`, `IdEmp`) VALUES
-('2024-09-09 06:54:14', 25, 46),
-('2024-09-09 06:54:53', 26, 49);
 
 -- --------------------------------------------------------
 
@@ -77,10 +72,6 @@ CREATE TABLE `disco` (
 --
 -- Despejando dados para a tabela `disco`
 --
-
-INSERT INTO `disco` (`Titulo`, `IdArtista`, `Ano`, `FotoCapa`, `IdDisco`, `Emprestado`) VALUES
-('roger', 5, 2023, 'uploads/20_roger.jpg', 20, 1),
-('32131', 5, 2023, 'uploads/22_32131.jpg', 22, 0);
 
 -- --------------------------------------------------------
 
@@ -102,10 +93,6 @@ CREATE TABLE `emprestimo` (
 -- Despejando dados para a tabela `emprestimo`
 --
 
-INSERT INTO `emprestimo` (`Nome`, `Email`, `Data`, `DevolucaoPrevista`, `IdEmp`, `IdDisco`, `Devolvido`) VALUES
-('carlos', 'cauaaule@rgmail.com', '2024-09-09 15:54:14', '2024-09-18 03:00:00', 46, 20, 1),
-('roger', 'cauaauler@gmail.com', '2024-09-09 15:54:23', '2024-09-10 03:00:00', 48, 20, 0),
-('dasda', 'cauaauler@gmail.com', '2024-09-09 15:54:53', '2024-09-17 03:00:00', 49, 22, 1);
 
 --
 -- Índices para tabelas despejadas
